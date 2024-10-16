@@ -13,22 +13,23 @@ Etudiant en Master Machine Learning, je suis actuellement en alternance pour l'e
 
 **Data Engineer**  
 *Datakhi, Tourcoing*  
-*2023 - 2024* 
-- Développement d'une solution d'une solution de calcul d'empreinte écologique des textiles (python, fast-API, flutter, typescript et reactjs)
-- Participation aux salons de conférences (veille active)
-- Conception d'architecture logicielle avec des contraintes de couts et de performance (base de données documents et graphes)
-- Utilisation de l'écosystème Azure (Azure synapse, dev Ops, data lake etc.)
-- Déploiement de la solution avec un hébergement local et cloud (ansible, terraform, administration de système linux)
+*2023 - ...* 
+- Développement d'une solution d'une solution de calcul d'empreinte écologique des textiles (*python, fast-API, flutter, typescript et reactjs*)
+- Participation aux salons de conférences (*veille active*)
+- Conception d'architecture logicielle avec des contraintes de couts et de performance (*base de données documents et graphes*)
+- Utilisation de l'écosystème Azure (*Azure synapse, dev Ops, data lake etc.*)
+- Déploiement de la solution avec un hébergement local et cloud (*ansible, terraform, administration de système linux*)
   
 **Developpeur FullStack**
 *Datakhi, Tourcoing*  
 *2023 - 2023*  
-- Développement d'un logiciel de versionnement de rapport PowerBi permettant la collaboration des équipes de data analyst(C++, reactjs, electron)
+- Développement d'un logiciel de versionnement de rapport PowerBi permettant la collaboration des équipes de data analyst(*C++, reactjs, electron*)
 - Développement d'une application PowerApps
 
 **Professeur de Musique**
-*Ecoles de musique, Apprentus*
-Enseigner le saxophone et le solfège en cours particulier ou à des classes.
+*Ecoles de musique, Apprentus*  
+*2017 - ...*  
+- Enseigner le saxophone et le solfège en cours particulier ou à des classes
 
 ---
 
@@ -48,7 +49,7 @@ Enseigner le saxophone et le solfège en cours particulier ou à des classes.
 *2020 - 2023*  
 - Algorithmie et structure de données
 - Architecture logicielle et réseau
-- Développement fulstack (javascript, reactjs, express, python, java, c)
+- Développement fulstack (*javascript, reactjs, express, python, java, c*)
 - Base de données relationnelles
 
 **Licence de Mathématiques**  
@@ -87,5 +88,5 @@ Auto-hébergement de service à but didactique.
 Recherche bibliographique avec le laboratoire [Algomus](https://www.algomus.fr/)
 
 **Club d'algorithmie**
-Animation du club d'algorithmie de l'université pour l'entrainement aux concours ([Hash Code](https://github.com/pierreavn/google-hashcode-archive), [Code Reply Challenge](https://challenges.reply.com/), [CCC](https://register.codingcontest.org/))
+Animation du club d'algorithmie de l'université pour l'entrainement aux concours ([Hash Code](https://github.com/pierreavn/google-hashcode-archive), [Code Reply Challenge](https://challenges.reply.com/), [CCC](https://register.codingcontest.org/)), en *Julia* principalement.
 
