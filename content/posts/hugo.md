@@ -1,13 +1,13 @@
 ---
 title: "Pourquoi et comment faire un site statique avec Hugo en 10 min chrono"
-date: 2024-10-15
+date: 2024-09-24
 draft: false
 tags: ["blog", "static-website-generator", "hugo", "portfolio"]
 ---
 
 Ce site est une vitrine pour exposer ce que je fais sur mon temps libre et m'entraîner à la rédaction d'articles pour améliorer ma vulgarisation technique. C'est aussi un excellent support pour me motiver à sortir de gestation l'énorme quantité d'idées de projets qui traînent dans mes backlogs. La veille technologique étant le nerf non pas de la guerre mais de l'efficacité, j'espère que ce portfolio facile à maintenir m'aidera à y consacrer plus de temps.
 
-Toute la structure de ce blog est faite avec [Hugo](https://gohugo.io/), un framework pour construire très vite des sites web pour ceux qui n'aiment pas passer des heures à écraser des règles CSS pour rendre un texte un peu plus contrasté et le décaler de 2 pixels vers la droite sans casser tout le reste du site en gardant la responsivité.
+Toute la structure de ce blog est faite avec [Hugo](https://gohugo.io/), un framework pour construire très vite des sites web pour ceux qui n'aiment pas passer des heures à écraser des règles CSS pour rendre un texte un peu plus contrasté et le décaler de 2 pixels vers la droite sans casser tout le reste du site en gardant la responsivité. Vous pouvez consulter tout le code de ce site sur ce dépôt [Github](https://github.com/nathanlq/static-website-hugo).
 
 ## Initialisation
 

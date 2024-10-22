@@ -1,6 +1,6 @@
 ---
 title: "Cloud Nord 2024 résumé en quelques conférences"
-date: 2024-10-16
+date: 2024-10-11
 draft: false
 tags: ["greenit", "postgresql", "embedding", "vecteur", "architecture"]
 ---

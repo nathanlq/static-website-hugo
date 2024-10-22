@@ -75,5 +75,11 @@ expiryDate = ["expiryDate"]
 
   [[menu.main]]
     name = "Curriculum Vitae"
-    url = "cv"
+    url = "cv_fr"
     weight = 30
+
+  [[menu.main]]
+    name = "Resume"
+    url = "cv_en"
+    weight = 30
+
