@@ -49,7 +49,7 @@ expiryDate = ["expiryDate"]
   global_mathjax = false
   readTime = true
   readTimeSeparator = "minutes de lecture"
-  shareSocial = true
+  shareSocial = false
   allowRobots = "index, follow"
   noIndexPages = ["404 Page not found"]
 
