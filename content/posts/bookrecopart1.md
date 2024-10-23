@@ -2,7 +2,7 @@
 title: "Projet de Recommandation de Livres : Collecte de Données avec Scrapy"
 date: 2024-10-22
 draft: false
-tags: ["python", "webscrapping", "scrapy", "automation"]
+tags: ["python", "webscrapping", "scrapy", "automation", "books"]
 ---
 
 Projet de Recommandation de Livres : Collecte de Données avec Scrapy
