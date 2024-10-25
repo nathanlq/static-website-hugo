@@ -2,7 +2,7 @@
 title: "Cloud Nord 2024 résumé en quelques conférences"
 date: 2024-10-11
 draft: false
-tags: ["greenit", "postgresql", "embedding", "vecteur", "architecture"]
+tags: ["greenit", "postgresql", "embedding", "vector", "architecture"]
 ---
 
 J'ai été au salon de conférence [Cloud Nord](https://www.cloudnord.fr/) ce jeudi 10 Octobre 2024 et voici un retour pour attiser votre curiosité sur les talks qui m'ont le plus marqués.
