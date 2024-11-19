@@ -1,5 +1,5 @@
 ---
-title: "Projet de Recommandation de Livres : Transformation et Stockage des Données avec MLflow"
+title: "Projet de Recommandation de Livres : Transformation et Stockage des Données"
 date: 2024-11-17
 draft: false
 tags: ["python", "data", "mlflow", "automation", "books", "postgresql", "pgvector"]
@@ -96,8 +96,8 @@ Une fois les données chargées en base le plus rapidement possible, je délègu
 MLflow est utilisé dans ce module, fournissant une visibilité complète sur le pipeline :
 
 - **Paramètres et Métriques** : Suivi des fichiers traités, des tailles des jeux de données et des étapes d’exécution.
-- **Artefacts** : Stockage des fichiers Parquet intermédiaires pour future inspection. Le modèle de `prepare` avec signature est aussi sauvegardé/
-- **Expériences partagées** : Les scripts compress.py, prepare.py et loader.py enregistrent leurs runs dans une expérience commune appelée compress_prepare_load.
+- **Artefacts** : Stockage des fichiers Parquet intermédiaires pour future inspection. Le modèle de `prepare` avec signature est aussi sauvegardé.
+- **Expériences partagées** : Les scripts `compress.py`, `prepare.py` et `loader.py` enregistrent leurs runs dans une expérience commune appelée `compress_prepare_load`.
 
 ```python
 with mlflow.start_run(run_name="prepare_run"):

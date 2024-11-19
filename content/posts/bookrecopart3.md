@@ -1,6 +1,6 @@
 ---
 title: "Projet de Recommandation de Livres : Génération de Vecteurs"
-date: 2024-11-19
+date: 2024-11-18
 draft: false
 tags: ["python", "microservices", "mlflow", "embedding", "books", "postgresql", "pgvector", "tfidf", "asyncpg"]
 ---
