@@ -7,7 +7,7 @@ tags: ["python", "webscrapping", "scrapy", "automation", "books"]
 
 Dans le cadre du projet de recommandation de livres, j’ai mis en place un premier module de collecte de données à l’aide de Scrapy. Cette étape est essentielle, car elle permet de récupérer les informations nécessaires depuis une librairie en ligne pour nourrir les futurs algorithmes de recommandation.
 
-Ce projet est pensé pour évoluer. À terme, il s’agira d’une application complète de recommandation de livres, mais chaque étape est soigneusement construite pour être modulaire et extensible. Tout est sur le dépôt [Github](https://github.com/nathanlq/book_reco).
+Ce projet est pensé pour évoluer. À terme, il s’agira d’une application complète de recommandation de livres, mais chaque étape est soigneusement construite pour être modulaire et extensible. Tout est sur le dépôt [Github](https://github.com/nathanlq/book-reco).
 
 ## Structure du Projet
 

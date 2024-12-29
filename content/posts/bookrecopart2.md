@@ -5,7 +5,7 @@ draft: false
 tags: ["python", "data", "mlflow", "automation", "books", "postgresql", "pgvector"]
 ---
 
-Après avoir mis en place un module de collecte de données à l’aide de Scrapy, la prochaine étape de mon projet de recommandation de livres consiste à traiter, transformer et stocker les données. Cette étape repose sur le module **store**, qui organise les données collectées et les prépare pour les prochaines phases d’analyse et de modélisation.
+Après avoir mis en place un module de collecte de données à l’aide de Scrapy, la prochaine étape de mon projet de recommandation de livres consiste à traiter, transformer et stocker les données. Cette étape repose sur le module **store**, qui organise les données collectées et les prépare pour les prochaines phases d’analyse et de modélisation. Tout est sur le dépôt [Github](https://github.com/nathanlq/book-reco).
 
 En plus d’optimiser les données, ce module intègre **MLflow** pour suivre et documenter chaque étape du pipeline, garantissant une traçabilité et une reproductibilité complètes. Je ne vais pas détailler son utilisation dans cette article, un post sera dédié à ce service qui permet à la fois de monitorer et de versionner le service pour empêcher la dérive des modéles ou leur régression potentielle.
 

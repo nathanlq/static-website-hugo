@@ -5,7 +5,7 @@ draft: false
 tags: ["python", "fastapi", "asyncpg", "postgresql", "api", "books", "microservices"]
 ---
 
-Après avoir organisé les données en base, il s'agit maintenant de les exposer pour les futurs services. Le module "expose" est dédié à cette tâche. Il sert de serveur API pour requêter la base de données PostgreSQL et fournir des informations détaillées sur les livres ainsi que des recommandations basées sur des vecteurs.
+Après avoir organisé les données en base, il s'agit maintenant de les exposer pour les futurs services. Le module "expose" est dédié à cette tâche. Il sert de serveur API pour requêter la base de données PostgreSQL et fournir des informations détaillées sur les livres ainsi que des recommandations basées sur des vecteurs. Tout est sur le dépôt [Github](https://github.com/nathanlq/book-reco).
 
 Il permet de :
 - **Récupérer des informations détaillées sur les livres** en utilisant divers filtres.
@@ -76,4 +76,4 @@ async def get_similar_books(
 
 ## Conclusion
 
-Ce service permet d'interroger la base de données et de générer des recommandations dans mon projet de suggestion de livres. Il repose sur des concepts modernes tels que l'asynchronisme et la gestion des requêtes API, tout en restant extensible pour de futures optimisations.
+Ce service permet d'interroger la base de données et de générer des recommandations dans mon projet de suggestion de livres. Il repose sur des concepts modernes tels que l'asynchronisme, tout en restant extensible pour de futures optimisations.

@@ -39,7 +39,7 @@ La labellisation et la vectorisation structurent ainsi les données, optimisant 
 
 Rien de plus simple, une API qui se branche sur notre base, une application L’exposition des données est simplifiée par une API qui se connecte directement à la base de données. L'application frontale s'appuie sur cette API pour afficher les résultats de manière claire et attrayante, permettant une interaction utilisateur fluide et agréable.
 
-L'API, construite en **Go** (ou **Rust**), propose une requête de recommandation paramétrable et pondérée pour mieux refléter les préférences de lecture de chaque utilisateur. Cette API gère les points suivants :
+L'API, construite avec **FastApi**, propose une requête de recommandation paramétrable et pondérée pour mieux refléter les préférences de lecture de chaque utilisateur. Cette API gère les points suivants :
 
 1. **Personnalisation pondérée** : la recommandation peut être paramétrée en fonction des préférences de l'utilisateur, avec une pondération basée sur les appréciations passées. Les utilisateurs peuvent noter chaque livre lu avec une intensité de satisfaction (par exemple, "fortement apprécié", "moyennement apprécié" ou "pas du tout apprécié"). Ces notes influencent les suggestions en donnant plus de poids aux lectures très appréciées et moins de poids aux autres, améliorant ainsi la pertinence des recommandations.
 

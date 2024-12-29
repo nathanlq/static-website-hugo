@@ -12,7 +12,7 @@ Grâce à ce microservice, nous pouvons générer deux types de représentations
 - **TF-IDF**, pour capturer l'importance des termes au sein des textes. Cela permettra d'entrainer des modèles pour labelliser rapidement les livres et les clusteriser dynamiquement dans un soucis de performance.
 - **Embeddings réduits par PCA**, pour une représentation dense des contenus basée sur des modèles de type transformers. Cela permettra, combiné à des filtres, d'utiliser les moteur SQL pour générer les recommandations.
 
-Ce module est conçu pour être intégré dans un pipeline d'analyse asynchrone et supervisé via **MLflow**, comme le bloc précédent.
+Ce module est conçu pour être intégré dans un pipeline d'analyse asynchrone et supervisé via **MLflow**, comme le bloc précédent. Tout est sur le dépôt [Github](https://github.com/nathanlq/book-reco).
 
 ## Structure du Projet
 
