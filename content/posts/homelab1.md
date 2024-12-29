@@ -1,5 +1,5 @@
 ---
-title: "Installation de Proxmox sur un Homelab : Configuration et Bonnes Pratiques"
+title: "Homelab : Configuration et Bonnes Pratiques"
 date: 2024-12-29
 draft: false
 tags: ["proxmox", "homelab", "virtualisation", "hyperviseur"]
