@@ -1,106 +1,123 @@
 # Leclercq Nathan
-nathan.leclercq9@protonmail.com  
+nathan.leclercq9@protonmail.com
 
 ---
 
 ## Profile
 
-Master's student in Machine Learning, currently doing a work-study program at [DataKhi](https://datakhi.fr/), where I mainly work on data normalization, extrapolation, and database organization for the [Tossée](https://tossee.fr/) project. In my free time, I experiment with my homelab and teach saxophone and music theory at a music school.
+Master's student in Machine Learning, currently working as an apprentice at [DataKhi](https://datakhi.fr/), where I mainly handle data normalization, extrapolation, and database organization for the [Tossée](https://tossee.fr/) project. I am interested in the design and deployment of end-to-end artificial intelligence solutions. Combining a dual background in mathematics and computer science with practical experience in data engineering, I am currently developing a complete MLOps platform via my homelab. Currently pursuing a Master's in Machine Learning, I am seeking a position that combines distributed systems architecture and innovative ML solutions deployment.
 
 ---
 
 ## Professional Experience
 
-**Data Engineer**  
+**Data Engineer & ML Engineer**  
 *Datakhi, Tourcoing*  
-*2023 - present* 
-- Developed a solution for calculating the ecological footprint of textiles (*python, fast-API, flutter, typescript, and reactjs*)
-- Participated in conference exhibitions (*active technology watch*)
-- Designed software architecture with cost and performance constraints (*document and graph databases*)
-- Worked with the Azure ecosystem (*Azure Synapse, DevOps, Data Lake, etc.*)
-- Deployed the solution with both local and cloud hosting (*ansible, terraform, Linux system administration*)
+*2023 - present*  
+- Architecture and development of a complete ecological footprint calculation solution:
+  - Design of a cost-optimized hybrid cloud/on-premise architecture
+  - Implementation of data pipelines processing 100k+ textile products
+  - Development of high-performance APIs (response time < 100ms)
+- Infrastructure and MLOps:
+  - Implementation of CI/CD system with Azure DevOps
+  - Deployment automation with Ansible and Terraform
+  - Configuration of containerized microservices architecture
+- Technical stack: Python (FastAPI, pandas), TypeScript (React), Azure (Synapse, DevOps, Data Lake), Ansible, Docker
 
-**FullStack Developer**
+**Lead FullStack Developer**  
 *Datakhi, Tourcoing*  
 *2023*  
-- Developed a version control software for PowerBi reports enabling team collaboration (*C++, reactjs, electron*)
-- Developed a PowerApps application
+- Architecture and development of a versioning system for PowerBI:
+  - High-performance C++ backend managing report differentials
+  - React frontend with complex state management
+  - Distribution via Electron for cross-platform compatibility
+- Technical stack: C++, React, Electron, PowerApps
 
-**Saxophonist, Music Teacher**
+**Music Teacher**  
 *Music Schools, Apprentus*  
 *2017 - present*  
-- Teach saxophone and music theory in private lessons or to classes
-- Experience as a musician in big bands, soul bands, wind ensembles, musical theater, etc.
+- Teaching saxophone and music theory
+- Development of personalized teaching materials
+
+---
+
+## Technical Skills
+
+**Infrastructure & DevOps**
+- Cloud: Azure (Synapse, DevOps, Data Lake, Functions)
+- Infrastructure as Code: Ansible, Terraform
+- Containerization: Docker, Kubernetes
+- Linux: System administration, shell scripting, monitoring
+
+**Data & ML**
+- Databases: PostgreSQL, MongoDB, Neo4j, Redis
+- ML/DL: PyTorch, scikit-learn, TensorFlow
+- Big Data: Spark, Hadoop
+- MLOps: MLflow, DVC, Weights & Biases
+
+**Development**
+- Backend: Python (FastAPI, Django), Node.js, Go
+- Frontend: React, TypeScript, Vue.js
+- System languages: C++, Rust
+- Scientific languages: Julia, R
 
 ---
 
 ## Education
 
-**Master in Machine Learning**
-*University of Lille, Sciences and Technologies*  
-*2023 - 2025*
-- Dimension reduction methods
-- Linear models
-- Big Data and Deep Learning
-- Natural Language Processing
-- Multi-agent modeling
+**Master's in Machine Learning**  
+*University of Lille*  
+*2023 - 2025*  
+- Specialization: Deep Learning, NLP, MLOps
+- Major projects:
+  - Deployment of LLMs on GPU infrastructure
+  - Optimization of recommendation systems
 
-**Bachelor's Degree in Computer Science**  
-*University of Lille, Sciences and Technologies*  
+**Bachelor's in Computer Science**  
+*University of Lille*  
 *2020 - 2023*  
-- Algorithms and data structures
-- Software and network architecture
-- Fullstack development (*javascript, reactjs, express, python, java, c*)
-- Relational databases
+- Advanced algorithms
+- Distributed architecture
+- Full-stack development
 
-**Bachelor's Degree in Mathematics**  
-*University of Lille, Sciences and Technologies*  
+**Mathematics Education**  
+*University of Lille*  
 *2017 - 2020*  
-- Theoretical studies in the foundations of algebra and analysis
-- Numerical analysis and matrix numerical analysis
-- Statistics and Probabilities
+- Solid foundations in numerical analysis
+- Fundamentals of probability and statistics
+- Applied linear algebra
 
 ---
 
-## Skills
+## Significant Projects
 
-- Software development
-- Database management
-- Cloud and DevOps: Azure ecosystem
-- Linux system administration
-- Machine Learning
-- Algorithms and data structures
-- Knowledge dissemination
+**MLOps Homelab Platform**
+- Complete infrastructure with GPU servers for ML/DL
+- Automated deployment of ML services (LLMs, recommendation systems)
+- Monitoring and observability via Prometheus/Grafana
+
+**Book Recommendation System**
+- Scraping and preprocessing pipeline (>100k books)
+- ML and NLP-based recommendation API
+- React user interface with D3.js visualizations
+
+**Algorithms Club Leader**
+- Organization of programming competition preparation sessions
+- Implementation of optimized solutions in Julia
+- Competition participation: Google Hash Code, Reply Code Challenge
 
 ---
 
 ## Languages
 
-- French (native)
-- English (B2 level)
-
----
-
-## Projects
-
-**Homelab Configuration**  
-Self-hosting services for educational purposes.
-
-**Automatic Melody Harmonization**  
-Bibliographic research with the [Algomus](https://www.algomus.fr/) laboratory
-
-**Algorithm Club**  
-Organized the university's algorithm club for competition training ([Hash Code](https://github.com/pierreavn/google-hashcode-archive), [Code Reply Challenge](https://challenges.reply.com/), [CCC](https://register.codingcontest.org/)), primarily in *Julia*.
-
-**Book Recommendation**
-Development of a book recommendation application based on automatically collected summaries and metadata. This project serves as a showcase for my skills.
+- French: Native
+- English: Professional (TOEIC B2)
 
 ---
 
 ## Interests
 
-- Cycling (commuting by bike)
-- Badminton
-- Jam session enthusiast
-- Reader of primarily Science Fiction
-- Role-playing games (Call of Cthulhu)
+- Music: Saxophone (jazz, soul), orchestra participation
+- Sports: Daily cycling, badminton
+- Reading: Science fiction, technical essays
+- Tabletop role-playing games
