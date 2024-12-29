@@ -1,5 +1,5 @@
 ---
-title: "Homelab : Configuration et Bonnes Pratiques"
+title: "Homelab : Bios, proxmox et ip locales"
 date: 2024-12-29
 draft: false
 tags: ["proxmox", "homelab", "virtualisation", "hyperviseur"]
