@@ -1,5 +1,5 @@
 ---
-title: "Projet de Recommandation de Livres : Serveur API"
+title: "Book Reco : Serveur API"
 date: 2024-11-19
 draft: false
 tags: ["python", "fastapi", "asyncpg", "postgresql", "api", "books", "microservices"]

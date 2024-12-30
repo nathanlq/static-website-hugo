@@ -11,7 +11,7 @@ Master's student in Machine Learning, currently working as an apprentice at [Dat
 
 ## Professional Experience
 
-**Data Engineer & ML Engineer**  
+**Data Engineer & ML Engineer (Apprenticeship)**  
 *Datakhi, Tourcoing*  
 *2023 - present*  
 - Architecture and development of a complete ecological footprint calculation solution:
@@ -24,7 +24,7 @@ Master's student in Machine Learning, currently working as an apprentice at [Dat
   - Configuration of containerized microservices architecture
 - Technical stack: Python (FastAPI, pandas), TypeScript (React), Azure (Synapse, DevOps, Data Lake), Ansible, Docker
 
-**Lead FullStack Developer**  
+**FullStack Developer (Internship)**  
 *Datakhi, Tourcoing*  
 *2023*  
 - Architecture and development of a versioning system for PowerBI:

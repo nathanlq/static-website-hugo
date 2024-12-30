@@ -1,5 +1,5 @@
 ---
-title: "Projet de Recommandation de Livres : Architecture cible"
+title: "Book Reco : Architecture cible"
 date: 2024-10-22
 draft: false
 tags: ["modularity", "scalability", "automation", "architecture"]

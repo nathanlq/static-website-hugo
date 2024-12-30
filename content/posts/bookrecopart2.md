@@ -1,5 +1,5 @@
 ---
-title: "Projet de Recommandation de Livres : Transformation et Stockage des Données"
+title: "Book Reco : Transformation et Stockage des Données"
 date: 2024-11-17
 draft: false
 tags: ["python", "data", "mlflow", "automation", "books", "postgresql", "pgvector"]

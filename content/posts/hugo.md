@@ -1,5 +1,5 @@
 ---
-title: "Pourquoi et comment faire un site statique avec Hugo en 10 min chrono"
+title: "Web : Faire un site statique avec Hugo"
 date: 2024-09-24
 draft: false
 tags: ["blog", "static-website-generator", "hugo", "portfolio"]

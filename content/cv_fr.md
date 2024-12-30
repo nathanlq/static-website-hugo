@@ -11,7 +11,7 @@ nathan.leclercq9@protonmail.com
 
 ## Expérience Professionnelle
 
-**Data Engineer & ML Engineer**  
+**Data Engineer & ML Engineer (Alternance)**
 *Datakhi, Tourcoing*  
 *2023 - présent*  
 - Architecture et développement d'une solution complète de calcul d'empreinte écologique :
@@ -24,7 +24,7 @@ nathan.leclercq9@protonmail.com
   - Configuration d'une architecture microservices conteneurisée
 - Stack technique : Python (FastAPI, pandas), TypeScript (React), Azure (Synapse, DevOps, Data Lake), Ansible, Docker
 
-**Lead Développeur FullStack**
+**Développeur FullStack (Stage)**
 *Datakhi, Tourcoing*  
 *2023*  
 - Architecture et développement d'un système de versioning pour PowerBI :

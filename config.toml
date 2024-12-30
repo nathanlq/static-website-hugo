@@ -1,4 +1,4 @@
-baseURL = 'http://spacesheep.ovh/'
+baseURL = 'https://nathan.leclercq.spacesheep.ovh/'
 languageCode = 'fr-fr'
 title = 'Nathan Leclercq'
 theme = "hermit-v2"

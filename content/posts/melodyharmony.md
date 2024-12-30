@@ -1,5 +1,5 @@
 ---
-title: "Modèles, algorithmes et logiciels pour l'harmonisation de mélodies : une analyse comparative"
+title: "Recherche : Modèles, algorithmes et logiciels pour l'harmonisation de mélodies"
 date: 2024-10-23
 draft: false
 tags: ["harmonisation", "algorithms", "music", "AI"]

@@ -1,5 +1,5 @@
 ---
-title: "Projet de Recommandation de Livres : Collecte de Données avec Scrapy"
+title: "Book Reco : Collecte de Données avec Scrapy"
 date: 2024-10-24
 draft: false
 tags: ["python", "webscrapping", "scrapy", "automation", "books"]
