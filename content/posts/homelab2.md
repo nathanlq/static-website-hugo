@@ -125,6 +125,6 @@ Cette architecture d'exposition des services, combinée à l'automatisation Ansi
 - Réduire les tâches manuelles
 - Assurer la reproductibilité des configurations
 
-Je ne vais pas rendre publique le dépots de mes playbooks car cela exposerait mon reseau local à beaucoup de failles de sécurités, mais si vous voulez plus d'informations n'hésitez pas à me contacter.
+Les playbooks sont accessibles publiquement sur ce [dépot](https://github.com/nathanlq/ansible-task-manager) (à l'exception des fichiers exposant des infos sensibles).
 
 Les prochains articles exploreront la mise en place du stockage centralisé et du monitoring, deux aspects essentiels pour compléter cette infrastructure.
