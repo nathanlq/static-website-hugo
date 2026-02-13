@@ -1,123 +1,128 @@
-# Leclercq Nathan
-nathan.leclercq9@protonmail.com  
+# Nathan Leclercq
+
+nathan.leclercq9@protonmail.com | [LinkedIn](https://www.linkedin.com/in/nathan-leclercq-51292014b/) | [GitHub](https://github.com/nathanlq) | [Blog](https://nathan.leclercq.spacesheep.ovh/)
 
 ---
 
 ## Profil
 
-Étudiant en Master Machine Learning, je suis actuellement en alternance chez [DataKhi](https://datakhi.fr/), où je m'occupe principalement de la normalisation, de l'extrapolation des données et de leur organisation en base pour le projet [Tossée](https://tossee.fr/). Je suis interessé par la conception et le déploiement de solutions d'intelligence artificielle de bout en bout. Combinant une double formation en mathématiques et informatique avec une expérience pratique en ingénierie des données, je développe actuellement une plateforme MLOps complète via mon homelab. Actuellement en Master Machine Learning, je recherche un poste permettant d'allier architecture de systèmes distribués et déploiement de solutions ML innovantes.
+Data Engineer et ML Engineer chez DataKhi depuis 3 ans (alternance puis CDI). Je conçois et opère des plateformes data de bout en bout : collecte, pipelines, modèles ML, déploiement, monitoring. Formation en mathématiques et informatique, Master Machine Learning (Lille). Je ne fais pas que du code — je déploie, j'industrialise et je livre.
 
 ---
 
 ## Expérience Professionnelle
 
-**Data Engineer & ML Engineer (Alternance)**
-*Datakhi, Tourcoing*  
-*2023 - présent*  
-- Architecture et développement d'une solution complète de calcul d'empreinte écologique :
-  - Conception d'une architecture hybride cloud/on-premise optimisée pour les coûts
-  - Implémentation de pipelines de données traitant 100k+ produits textiles
-  - Développement d'APIs hautement performantes (temps de réponse < 100ms)
-- Infrastructure et MLOps :
-  - Mise en place d'un système de CI/CD avec Azure DevOps
-  - Automatisation du déploiement avec Ansible et Terraform
-  - Configuration d'une architecture microservices conteneurisée
-- Stack technique : Python (FastAPI, pandas), TypeScript (React), Azure (Synapse, DevOps, Data Lake), Ansible, Docker
+### DataKhi — Cabinet de conseil data, Tourcoing (2023 - présent)
 
-**Développeur FullStack (Stage)**
-*Datakhi, Tourcoing*  
-*2023*  
-- Architecture et développement d'un système de versioning pour PowerBI :
-  - Backend performant en C++ gérant les différentiels de rapports
-  - Frontend React avec state management complexe
-  - Distribution via Electron pour compatibilité multi-plateforme
-- Stack technique : C++, React, Electron, PowerApps
+**Data Engineer — Mission Nyukom** · CDI · oct 2025 - présent
+- Conception et déploiement d'une plateforme data télécom end-to-end : collecte (scraping 3CX, API Centreon), data lake MinIO, entrepôt PostgreSQL en schéma étoile, restitution Power BI
+- Déploiement de l'infrastructure complète : K3s, Airflow, Ansible (5 rôles), registre Docker privé
+- Gestion multi-client avec partitionnement, idempotence et backfill historique
+- ~22 000 lignes de code · Stack : Airflow, K3s, Ansible, Docker, PostgreSQL, MinIO, Playwright, Pandas
 
-**Professeur de Musique**
-*Écoles de musique, Apprentus*  
-*2017 - présent*  
-- Enseignement du saxophone et du solfège
-- Développement de supports pédagogiques personnalisés
+**ML Engineer — Mission Hall U Need** · CDI (continuité alternance) · 2023 - présent
+- Industrialisation d'un modèle de prédiction d'affluence restaurant (XGBoost quantile regression)
+- 28 modèles indépendants, feature engineering avancé (50+ features : météo, calendrier, jours fériés, réservations J-minus, encoding cyclique)
+- Loss function custom (Huber), calibration des intervalles de confiance, tests de non-régression (Pearson ≥ 0.999)
+- Pipeline complet : collecte Microsoft Fabric → entraînement → prédiction · Workflow Makefile
+
+**Data Engineer & ML Engineer — Mission Tossée** · Alternance · 2023 - 2025
+- Architecture d'un écosystème data complet pour un agrégateur de mode éco-responsable (~15 sous-projets)
+- Scraping multi-marques (Playwright, Scrapy, moteur de règles YAML custom, 20+ marques)
+- Pipeline de normalisation, calcul d'impacts environnementaux (API Ecobalyse), embeddings produit
+- API backend (FastAPI, PostgreSQL/pgvector, recherche sémantique, recommandation) — temps de réponse < 100ms
+- App mobile Flutter : essayage virtuel (DM-VTON), scan code-barres, OAuth multi-provider, géolocalisation
+- Extension navigateur React/TypeScript pour affichage des impacts en temps réel
+- Agent IA (OpenAI Agents SDK) pour extraction automatique de données depuis HTML
+- Déploiement hybride on-premise / Azure (Functions, Blob, DevOps)
+
+**Développeur FullStack — Stage** · 2023 · 4 mois
+- Système de versioning pour PowerBI : backend C++ (différentiels de rapports), frontend React, distribution Electron
+
+---
+
+### Professeur de Musique · 2017 - présent
+- Enseignement du saxophone (jazz, soul) et solfège — cours particuliers et écoles de musique
 
 ---
 
 ## Compétences Techniques
 
-**Infrastructure & DevOps**
-- Cloud : Azure (Synapse, DevOps, Data Lake, Functions)
-- Infrastructure as Code : Ansible, Terraform
-- Conteneurisation : Docker, Kubernetes
-- Linux : Administration système, scripting shell, monitoring
+**Data Engineering**
+- Pipelines ETL end-to-end, schéma en étoile, partitionnement, idempotence, backfill
+- Apache Airflow · PostgreSQL · MinIO (S3) · Parquet / PyArrow · Microsoft Fabric
 
-**Data & ML**
-- Bases de données : PostgreSQL, MongoDB, Graph Oriented Database, Redis
-- ML/DL : PyTorch, scikit-learn, TensorFlow
-- Big Data : Spark
-- MLOps : MLflow, Weights & Biases
+**Machine Learning**
+- XGBoost (régression quantile) · Feature engineering · Cross-validation temporelle
+- Embeddings / recherche vectorielle (pgvector) · CamemBERT / Transformers · MLflow
+- Calibration d'intervalles de confiance · Loss functions custom
+
+**DevOps / Infrastructure**
+- Kubernetes (K3s) · Docker · Ansible (IaC, rôles, vault) · Proxmox
+- Monitoring : Prometheus / Grafana · CI/CD : Makefile, pipelines
+- Azure (Fabric, Functions, Blob, DevOps)
 
 **Développement**
-- Backend : Python (FastAPI), Node.js, Go, Haskell
-- Frontend : React, TypeScript, Vue.js
-- Langages système : C++, Rust
-- Langages scientifiques : Julia, R
+- Python (FastAPI, Pandas, scikit-learn) · SQL · TypeScript (React) · Dart (Flutter)
+- Scraping : Playwright, Scrapy, BeautifulSoup
+- Notions : Go, Rust, Haskell, C++
+
+**Langages scientifiques / algo**
+- Julia (compétitions : Google Hash Code, Reply Challenge, Cloudflight) · R · NumPy / SciPy
+
+---
+
+## Projets Personnels
+
+**Plateforme MLOps Homelab** · 2024 - présent
+- Infrastructure auto-hébergée : Proxmox, serveurs GPU, services ML, agents crewAI avec RAG
+- Monitoring Prometheus/Grafana, déploiement Ansible, registre Docker, Gitea
+- [5 articles techniques publiés](https://nathan.leclercq.spacesheep.ovh/posts/)
+
+**Système de Recommandation de Livres** · 2023 - 2025
+- Pipeline data complet : scraping >100k livres, embeddings (TF-IDF + CamemBERT), API FastAPI
+- PostgreSQL/pgvector, MLflow, interface Vue.js
+- [6 articles techniques publiés](https://nathan.leclercq.spacesheep.ovh/posts/)
+
+**Club Algorithmie** · 2020 - 2024
+- Préparation et participation aux compétitions de programmation
+- Solutions optimisées en Julia · Google Hash Code, Reply Challenge, Cloudflight
+
+**Recherche : Harmonisation de Mélodies** · 2024
+- Étude comparative de modèles et algorithmes pour l'harmonisation musicale automatique
 
 ---
 
 ## Formation
 
-**Master Machine Learning**  
-*Université de Lille*  
-*2023 - 2025*  
-- Spécialisation : Deep Learning, NLP, MLOps
-- Projets majeurs : 
-  - Déploiement de LLMs sur infrastructure GPU
-  - Optimisation de systèmes de recommandation
+**Master Machine Learning** · Université de Lille · 2023 - 2025
+- Deep Learning, NLP, MLOps · Déploiement de LLMs sur infrastructure GPU
 
-**Licence Informatique**  
-*Université de Lille*  
-*2020 - 2023*  
-- Algorithmique avancée
-- Architecture distribuée
-- Développement fullstack
+**Licence Informatique** · Université de Lille · 2020 - 2023
+- Algorithmique avancée, architecture distribuée, développement fullstack
 
-**Formation en Mathématiques**  
-*Université de Lille*  
-*2017 - 2020*  
-- Bases solides en analyse numérique
-- Fondements des probabilités et statistiques
-- Algèbre linéaire appliquée
-
----
-
-## Projets Significatifs
-
-**Plateforme MLOps Homelab**
-- Infrastructure complète avec serveurs GPU pour ML/DL
-- Déploiement automatisé de services ML (LLMs, systèmes de recommandation)
-- Monitoring et observabilité via Prometheus/Grafana
-
-**Système de Recommandation de Livres**
-- Pipeline de scraping et preprocessing de données (>100k livres)
-- API de recommandation basée sur ML et NLP
-- Interface utilisateur React avec visualisations D3.js
-
-**Animation Club Algorithmie**
-- Organisation de sessions de préparation aux concours de programmation
-- Implémentation de solutions optimisées en Julia
-- Participation aux compétitions : Google Hash Code, Reply Code Challenge
+**Cursus Mathématiques** (L1-L3) · Université de Lille · 2017 - 2020
+- Analyse numérique, probabilités/statistiques, algèbre linéaire appliquée
 
 ---
 
 ## Langues
 
-- Français : Natif
-- Anglais : Professionnel (TOEIC 885/B2)
+- Français : natif
+- Anglais : professionnel (TOEIC 885)
 
 ---
 
 ## Centres d'intérêt
 
-- Musique : Saxophone (jazz, soul), participation à des orchestres
-- Sport : Cyclisme quotidien, badminton
-- Lecture : Science-fiction, essais techniques
+- Musique : saxophone jazz/soul, orchestre
+- Sport : vélo quotidien, badminton
+- Lecture : science-fiction, essais techniques
 - Jeux de rôle sur table
+
+---
+
+## Publications
+
+- [5 articles techniques sur le blog DataKhi](https://www.datakhi.fr/fr/blog) (2026)
+- [14 articles techniques sur mon blog personnel](https://nathan.leclercq.spacesheep.ovh/posts/) (2024-2025)
