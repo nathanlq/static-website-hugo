@@ -3,6 +3,7 @@ title: "Web : Faire un site statique avec Hugo"
 date: 2024-09-24
 draft: false
 tags: ["blog", "static-website-generator", "hugo", "portfolio"]
+description: "Tutoriel pour créer un site statique avec Hugo : installation, configuration, thème et déploiement."
 ---
 
 Ce site est une vitrine pour exposer ce que je fais sur mon temps libre et m'entraîner à la rédaction d'articles pour améliorer ma vulgarisation technique. C'est aussi un excellent support pour me motiver à sortir de gestation l'énorme quantité d'idées de projets qui traînent dans mes backlogs. La veille technologique étant le nerf non pas de la guerre mais de l'efficacité, j'espère que ce portfolio facile à maintenir m'aidera à y consacrer plus de temps.

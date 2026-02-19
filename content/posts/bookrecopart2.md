@@ -3,6 +3,7 @@ title: "Book Reco : Transformation et Stockage des Données"
 date: 2024-11-17
 draft: false
 tags: ["python", "data", "mlflow", "automation", "books", "postgresql", "pgvector"]
+description: "Compression, nettoyage et chargement des données livres en PostgreSQL avec tracking MLflow."
 ---
 
 Après avoir mis en place un module de collecte de données à l’aide de Scrapy, la prochaine étape de mon projet de recommandation de livres consiste à traiter, transformer et stocker les données. Cette étape repose sur le module **store**, qui organise les données collectées et les prépare pour les prochaines phases d’analyse et de modélisation. Tout est sur le dépôt [Github](https://github.com/nathanlq/book-reco).

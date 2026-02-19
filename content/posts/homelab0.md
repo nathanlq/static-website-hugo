@@ -3,6 +3,7 @@ title: "Homelab : Outils et Choix d’Hébergement"
 date: 2024-12-01
 draft: false
 tags: ["self-hosted", "homelab"]
+description: "Présentation de l'architecture de mon homelab : 4 machines, services auto-hébergés, et automatisation avec Ansible et Docker."
 ---
 
 Avec mon homelab, mon objectif est de créer un environnement flexible, scalable et automatisé, couvrant des besoins variés : développement, stockage, monitoring, et auto-hébergement de services personnels. Voici une présentation des choix technologiques et de la structure que j'ai adoptés pour répondre à ces besoins.

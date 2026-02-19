@@ -1,8 +1,9 @@
 ---
 title: "Homelab : Monitoring et Supervision"
-date: 2025-01-06
+date: 2025-05-11
 draft: false
 tags: ["monitoring", "portainer", "prometheus", "grafana", "homelab"]
+description: "Mise en place de Portainer, Prometheus, Grafana, Glance et MLflow pour monitorer un homelab."
 ---
 
 Après avoir mis en place l'infrastructure de base et l'exposition sécurisée des services, une étape cruciale dans la gestion d'un homelab est la mise en place d'un système de monitoring complet. Dans cet article, je vais détailler les différents outils que j'utilise pour surveiller et gérer mon infrastructure : Portainer pour la gestion des conteneurs, Prometheus et Grafana pour la collecte et la visualisation des métriques, et Glance pour avoir une vue d'ensemble rapide de mon homelab.

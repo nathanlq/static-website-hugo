@@ -1,0 +1,71 @@
+# Blowfish theme params
+# Docs: https://blowfish.page/docs/configuration/
+
+colorScheme = "noir"
+defaultAppearance = "light"
+autoSwitchAppearance = true
+
+enableSearch = true
+enableCodeCopy = true
+
+# Header
+[header]
+  layout = "basic"
+
+# Footer
+[footer]
+  showMenu = true
+  showCopyright = true
+  showThemeAttribution = false
+  showAppearanceSwitcher = true
+  showScrollToTop = true
+
+# Homepage
+[homepage]
+  layout = "hero"
+  homepageImage = "spacesheep.jpg"
+  showRecent = true
+  showRecentItems = 6
+  showMoreLink = true
+  showMoreLinkDest = "/posts"
+  cardView = true
+  cardViewScreenWidth = false
+  layoutBackgroundBlur = true
+
+# Article
+[article]
+  showDate = true
+  showDateUpdated = false
+  showAuthor = false
+  showBreadcrumbs = true
+  showDraftLabel = true
+  showEdit = false
+  showHeadingAnchors = true
+  showPagination = true
+  showReadingTime = true
+  showTableOfContents = true
+  showTaxonomies = true
+  showWordCount = false
+  showComments = false
+  sharingLinks = false
+
+# List
+[list]
+  showBreadcrumbs = false
+  showSummary = true
+  showTableOfContents = false
+  showCards = true
+  groupByYear = true
+
+# Taxonomy
+[taxonomy]
+  showTermCount = true
+
+# Sitemap
+[sitemap]
+
+# Fathom Analytics (disabled)
+[fathomAnalytics]
+
+# Verification
+[verification]

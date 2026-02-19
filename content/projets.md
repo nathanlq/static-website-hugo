@@ -1,7 +1,10 @@
 ---
 title: "Projets"
-date: "2026-02-13"
-draft: false
+description: "Missions professionnelles et projets personnels."
+showDate: false
+showReadingTime: false
+showAuthor: false
+showTableOfContents: true
 ---
 
 ## Missions professionnelles — DataKhi

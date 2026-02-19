@@ -1,9 +1,10 @@
 
 ---
 title: "Homelab : Stockage et Hébergement"
-date: 2025-01-06
+date: 2025-07-20
 draft: false
 tags: ["storage", "postgres", "gitea", "docker", "ftp", "homelab"]
+description: "PostgreSQL avec pgvector, Gitea, registre Docker privé et FTP sur NAS Synology pour le stockage du homelab."
 ---
 
 Après avoir mis en place le monitoring et la supervision, une étape tout aussi essentielle pour mon homelab est la mise en place d’un système de stockage fiable et adapté à mes besoins. Mon infrastructure repose sur quatre piliers principaux :

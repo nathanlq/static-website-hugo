@@ -3,6 +3,7 @@ title: "Book Reco : Génération de Vecteurs"
 date: 2024-11-18
 draft: false
 tags: ["python", "microservices", "mlflow", "embedding", "books", "postgresql", "pgvector", "tfidf", "asyncpg"]
+description: "Microservice de vectorisation : embeddings TF-IDF et CamemBERT, mise à jour asynchrone avec asyncpg et MLflow."
 ---
 
 Dans le cadre de mon projet de recommandation de livres, un élément clé pour offrir des suggestions pertinentes repose sur la représentation vectorielle des données textuelles, comme les résumés et les titres des livres. Le module Vectorizer, développé en tant que microservice, est dédié à cette tâche.

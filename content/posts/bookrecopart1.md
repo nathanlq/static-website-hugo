@@ -3,6 +3,7 @@ title: "Book Reco : Collecte de Données avec Scrapy"
 date: 2024-10-24
 draft: false
 tags: ["python", "webscrapping", "scrapy", "automation", "books"]
+description: "Collecte de données livres avec Scrapy : spider, transformation Parquet et automatisation Makefile."
 ---
 
 Dans le cadre du projet de recommandation de livres, j’ai mis en place un premier module de collecte de données à l’aide de Scrapy. Cette étape est essentielle, car elle permet de récupérer les informations nécessaires depuis une librairie en ligne pour nourrir les futurs algorithmes de recommandation.

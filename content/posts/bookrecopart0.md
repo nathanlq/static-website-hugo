@@ -3,6 +3,7 @@ title: "Book Reco : Architecture cible"
 date: 2024-10-22
 draft: false
 tags: ["modularity", "scalability", "automation", "architecture"]
+description: "Architecture cible d'un système de recommandation de livres : collecte, traitement, embeddings et API."
 ---
 
 Pour consolider mes compétences en développement, je me suis lancé dans un projet de recommandation de livres. Mon objectif est de concevoir une architecture simple mais modulable, capable de gérer la scalabilité et de rester disponible en continu. Ce projet inclut des phases de collecte de données, de labellisation et de vectorisation, ce qui me permet d’explorer l’ensemble de la stack logicielle, d’utiliser les bibliothèques standard et d’héberger le tout dans mon homelab.

@@ -1,6 +1,15 @@
+---
+title: "Resume"
+description: "Nathan Leclercq — Data Engineer & ML Engineer"
+showReadingTime: false
+showDate: false
+showAuthor: false
+showTableOfContents: true
+---
+
 # Nathan Leclercq
 
-nathan.leclercq9@protonmail.com | [LinkedIn](https://www.linkedin.com/in/nathan-leclercq-51292014b/) | [GitHub](https://github.com/nathanlq) | [Blog](https://nathan.leclercq.spacesheep.ovh/)
+nathan.leclercq9@protonmail.com | [LinkedIn](https://www.linkedin.com/in/nathan-leclercq-51292014b/) | [GitHub](https://github.com/nathanlq) | [Blog](https://nathan.leclercq.spacesheep.ovh/) | [Download PDF](/pdf/cv_nathan_leclercq_en.pdf)
 
 ---
 

@@ -1,0 +1,20 @@
+languageCode = "fr"
+languageName = "Français"
+weight = 1
+
+title = "Nathan Leclercq"
+
+[params]
+  displayName = "Nathan Leclercq"
+  isoCode = "fr"
+
+[params.author]
+  name = "Nathan Leclercq"
+  image = ""
+  headline = "Data Engineer · ML Engineer"
+  bio = "Je conçois et opère des plateformes data de bout en bout — de la collecte au modèle ML en production. CDI chez [DataKhi](https://datakhi.fr/), Tourcoing."
+  links = [
+    { github = "https://github.com/nathanlq" },
+    { linkedin = "https://www.linkedin.com/in/nathan-leclercq-51292014b/" },
+    { email = "mailto:nathan.leclercq9@protonmail.com" },
+  ]

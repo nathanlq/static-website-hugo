@@ -3,6 +3,7 @@ title: "Revue : Cloud Nord 2024 en diagonale"
 date: 2024-10-11
 draft: false
 tags: ["greenit", "postgresql", "embedding", "vector", "architecture"]
+description: "Résumé de 5 conférences à Cloud Nord 2024 : green IT, télémétrie, empreinte carbone et recherche vectorielle."
 ---
 
 J'ai été au salon de conférence [Cloud Nord](https://www.cloudnord.fr/) ce jeudi 10 Octobre 2024 et voici un retour pour attiser votre curiosité sur les talks qui m'ont le plus marqués.

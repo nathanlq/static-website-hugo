@@ -1,0 +1,22 @@
+baseURL = "https://nathan.leclercq.spacesheep.ovh/"
+languageCode = "fr"
+defaultContentLanguage = "fr"
+title = "Nathan Leclercq"
+theme = "blowfish"
+
+enableEmoji = true
+enableRobotsTXT = true
+
+pygmentsCodefences = true
+pygmentsUseClasses = true
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[sitemap]
+  changefreq = "daily"
+  priority = 0.5
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]

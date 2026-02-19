@@ -1,8 +1,9 @@
 ---
 title: "Book Reco : Déploiement et Orchestration"
-date: 2025-01-05
+date: 2025-02-09
 draft: false
 tags: ["docker", "deployment", "automation", "homelab", "makefile", "containerization"]
+description: "Déploiement du système de recommandation avec Docker, Makefile et hébergement sur le homelab."
 ---
 
 Pour finaliser mon projet de recommandation de livres, j'ai mis en place une stratégie de déploiement basée sur Docker et orchestrée via un Makefile. L'ensemble du système est hébergé dans mon homelab, avec une API accessible à l'adresse https://app.bookfarm.spacesheep.ovh/. Tout est sur le dépôt [Github](https://github.com/nathanlq/book-reco).

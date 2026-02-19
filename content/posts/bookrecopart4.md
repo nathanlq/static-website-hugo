@@ -3,6 +3,7 @@ title: "Book Reco : Serveur API"
 date: 2024-11-19
 draft: false
 tags: ["python", "fastapi", "asyncpg", "postgresql", "api", "books", "microservices"]
+description: "API FastAPI pour la recherche de livres et la recommandation par similarité vectorielle."
 ---
 
 Après avoir organisé les données en base, il s'agit maintenant de les exposer pour les futurs services. Le module "expose" est dédié à cette tâche. Il sert de serveur API pour requêter la base de données PostgreSQL et fournir des informations détaillées sur les livres ainsi que des recommandations basées sur des vecteurs. Tout est sur le dépôt [Github](https://github.com/nathanlq/book-reco).

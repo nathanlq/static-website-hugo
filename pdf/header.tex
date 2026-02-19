@@ -1,0 +1,48 @@
+% Modern CV styling
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\usepackage{tabularx}
+
+% Colors
+\definecolor{accent}{HTML}{2B5797}
+\definecolor{lightgray}{HTML}{F0F0F0}
+\definecolor{darktext}{HTML}{333333}
+
+% Remove page numbers
+\pagestyle{empty}
+
+% Lists: readable spacing
+\setlist{nosep, leftmargin=1.5em, itemsep=4pt, parsep=1pt}
+
+% Section styling: accent color line — generous spacing
+\titleformat{\section}
+  {\large\bfseries\color{accent}}
+  {}{0pt}{}[\vspace{-4pt}{\color{accent}\rule{\textwidth}{1.5pt}}]
+\titlespacing*{\section}{0pt}{20pt}{10pt}
+
+% Subsection styling
+\titleformat{\subsection}{\normalsize\bfseries}{}{0pt}{}
+\titlespacing*{\subsection}{0pt}{8pt}{4pt}
+
+% Paragraph spacing
+\setlength{\parskip}{5pt}
+\setlength{\parindent}{0pt}
+
+% Link colors
+\hypersetup{
+  colorlinks=true,
+  linkcolor=accent,
+  urlcolor=accent
+}
+
+% Custom command for mission separator
+\newcommand{\missionsep}{\vspace{10pt}}
+
+% Custom command for skill category
+\newcommand{\skillcat}[2]{%
+  \noindent\textbf{#1}\hspace{0.5em}—\hspace{0.5em}#2\par\vspace{4pt}%
+}

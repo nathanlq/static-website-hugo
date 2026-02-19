@@ -1,8 +1,9 @@
 ---
 title: "Homelab : Exposition des Services et Automatisation"
-date: 2025-01-05
+date: 2025-03-16
 draft: false
 tags: ["ansible", "nginx", "automation", "homelab", "docker", "https"]
+description: "Exposer des services avec Nginx Proxy Manager, HTTPS et Let's Encrypt, et automatiser le déploiement avec Ansible."
 ---
 
 Après avoir mis en place l'infrastructure de base de mon homelab avec Proxmox, l'étape suivante consiste à exposer les services de manière sécurisée et à automatiser leur déploiement. Pour cela, j'utilise **Nginx Proxy Manager** comme reverse proxy et **Ansible** pour l'automatisation. Cette configuration permet d'exposer facilement mes services en HTTPS tout en maintenant une gestion centralisée des certificats SSL.

@@ -3,6 +3,7 @@ title: "Recherche : Modèles, algorithmes et logiciels pour l'harmonisation de m
 date: 2024-10-23
 draft: false
 tags: ["harmonisation", "algorithms", "music", "AI"]
+description: "Revue de 5 articles de recherche sur l'harmonisation automatique de mélodies : modèles probabilistes, HMM et algorithmes génétiques."
 ---
 
 L'harmonisation de mélodies est un domaine d'étude fascinant, combinant musique et algorithmes pour générer des accords à partir de simples lignes mélodiques. Mon travail de recherche se concentre sur les techniques actuelles, en particulier celles ne nécessitant pas d'entraînement préalable. L'objectif est de comprendre comment des méthodes innovantes s'affranchissent des modèles complexes pour proposer des solutions efficaces à ce problème classique. Toutes le détail des sources, les articles de références et les documents complets se trouvent sur ce [Github](https://github.com/nathanlq/melody-harmony).
