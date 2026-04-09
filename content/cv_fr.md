@@ -9,7 +9,7 @@ showTableOfContents: true
 
 # Nathan Leclercq
 
-nathan.leclercq9@protonmail.com | [LinkedIn](https://www.linkedin.com/in/nathan-leclercq-51292014b/) | [GitHub](https://github.com/nathanlq) | [Blog](https://nathan.leclercq.spacesheep.ovh/) | [Télécharger en PDF](/pdf/cv_nathan_leclercq_fr.pdf)
+[nathan.leclercq9@protonmail.com](mailto:nathan.leclercq9@protonmail.com) | [LinkedIn](https://www.linkedin.com/in/nathan-leclercq-51292014b/) | [GitHub](https://github.com/nathanlq) | [Blog](https://nathan.leclercq.spacesheep.ovh/) | [Télécharger en PDF](/pdf/cv_nathan_leclercq_fr.pdf)
 
 ---
 
@@ -25,21 +25,21 @@ Data Engineer et ML Engineer chez DataKhi depuis 3 ans (alternance puis CDI). Je
 
 **Data Engineer — Mission Nyukom** · CDI · oct 2025 - présent
 - Conception et déploiement d'une plateforme data télécom end-to-end : collecte (scraping 3CX, API Centreon), data lake MinIO, entrepôt PostgreSQL en schéma étoile, restitution Power BI
-- Déploiement de l'infrastructure complète : K3s, Airflow, Ansible (5 rôles), registre Docker privé
+- Déploiement de l'infrastructure complète : K3s, Airflow, Ansible, registre Docker privé
 - Gestion multi-client avec partitionnement, idempotence et backfill historique
-- ~22 000 lignes de code · Stack : Airflow, K3s, Ansible, Docker, PostgreSQL, MinIO, Playwright, Pandas
+- Stack : Airflow, K3s, Ansible, Docker, PostgreSQL, MinIO, Playwright, Pandas
 
 **ML Engineer — Mission Hall U Need** · CDI (continuité alternance) · 2023 - présent
 - Industrialisation d'un modèle de prédiction d'affluence restaurant (XGBoost quantile regression)
-- 28 modèles indépendants, feature engineering avancé (50+ features : météo, calendrier, jours fériés, réservations J-minus, encoding cyclique)
-- Loss function custom (Huber), calibration des intervalles de confiance, tests de non-régression (Pearson ≥ 0.999)
+- Modèles de prédiction multi-restaurant, feature engineering (météo, calendrier, réservations)
+- Loss function custom (Huber), calibration des intervalles de confiance, tests de non-régression
 - Pipeline complet : collecte Microsoft Fabric → entraînement → prédiction · Workflow Makefile
 
 **Data Engineer & ML Engineer — Mission Tossée** · Alternance · 2023 - 2025
-- Architecture d'un écosystème data complet pour un agrégateur de mode éco-responsable (~15 sous-projets)
-- Scraping multi-marques (Playwright, Scrapy, moteur de règles YAML custom, 20+ marques)
+- Architecture d'un écosystème data complet pour un agrégateur de mode éco-responsable
+- Scraping multi-marques (Playwright, Scrapy, moteur de règles YAML custom)
 - Pipeline de normalisation, calcul d'impacts environnementaux (API Ecobalyse), embeddings produit
-- API backend (FastAPI, PostgreSQL/pgvector, recherche sémantique, recommandation) — temps de réponse < 100ms
+- API backend (FastAPI, PostgreSQL/pgvector, recherche sémantique, recommandation)
 - App mobile Flutter : essayage virtuel (DM-VTON), scan code-barres, OAuth multi-provider, géolocalisation
 - Extension navigateur React/TypeScript pour affichage des impacts en temps réel
 - Agent IA (OpenAI Agents SDK) pour extraction automatique de données depuis HTML
@@ -86,12 +86,12 @@ Data Engineer et ML Engineer chez DataKhi depuis 3 ans (alternance puis CDI). Je
 **Plateforme MLOps Homelab** · 2024 - présent
 - Infrastructure auto-hébergée : Proxmox, serveurs GPU, services ML, agents crewAI avec RAG
 - Monitoring Prometheus/Grafana, déploiement Ansible, registre Docker, Gitea
-- [5 articles techniques publiés](https://nathan.leclercq.spacesheep.ovh/posts/)
+- [Articles techniques publiés](https://nathan.leclercq.spacesheep.ovh/posts/)
 
 **Système de Recommandation de Livres** · 2023 - 2025
-- Pipeline data complet : scraping >100k livres, embeddings (TF-IDF + CamemBERT), API FastAPI
+- Pipeline data complet : scraping d'un large catalogue de livres, embeddings (TF-IDF + CamemBERT), API FastAPI
 - PostgreSQL/pgvector, MLflow, interface Vue.js
-- [6 articles techniques publiés](https://nathan.leclercq.spacesheep.ovh/posts/)
+- [Articles techniques publiés](https://nathan.leclercq.spacesheep.ovh/posts/)
 
 **Club Algorithmie** · 2020 - 2024
 - Préparation et participation aux compétitions de programmation
@@ -133,5 +133,5 @@ Data Engineer et ML Engineer chez DataKhi depuis 3 ans (alternance puis CDI). Je
 
 ## Publications
 
-- [5 articles techniques sur le blog DataKhi](https://www.datakhi.fr/fr/blog) (2026)
-- [14 articles techniques sur mon blog personnel](https://nathan.leclercq.spacesheep.ovh/posts/) (2024-2025)
+- [Articles techniques sur le blog DataKhi](https://www.datakhi.fr/fr/blog) (2026)
+- [Articles techniques sur mon blog personnel](https://nathan.leclercq.spacesheep.ovh/posts/) (2024-2025)
