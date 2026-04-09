@@ -1,0 +1,415 @@
+================================================================================
+                    PROFIL PROFESSIONNEL - NATHAN LECLERCQ
+              Analyse basee sur les projets et publications techniques
+================================================================================
+
+EXPERIENCE : ~1 an de CDI (+ 2 ans d'alternance chez DataKhi)
+ENTREPRISE : DataKhi (cabinet de conseil data), Tourcoing
+SITE PERSO : https://nathan.leclercq.spacesheep.ovh/
+LINKEDIN   : https://www.linkedin.com/in/nathan-leclercq-51292014b/
+GITHUB     : https://github.com/nathanlq
+
+FORMATION :
+  - Master Machine Learning, Universite de Lille (2023-2025)
+    > Deep Learning, NLP, MLOps
+    > Deploiement LLM sur infra GPU, optimisation systemes de recommandation
+  - Licence Informatique, Universite de Lille (2020-2023)
+    > Algorithmes avances, architecture distribuee, fullstack
+  - Licence Mathematiques, Universite de Lille (2017-2020)
+    > Analyse numerique, probabilites/statistiques, algebre lineaire appliquee
+  - TOEIC : 885 (B2)
+
+PARCOURS PROFESSIONNEL :
+  - Data Scientist alternance - Hall U Need / DataKhi (2023-2025)
+    > Modelisation predictive series temporelles, CamemBERT fine-tuning textile
+    > Couverture d'erreur 90%, collecte/extrapolation donnees meteo
+  - Data Engineer & ML Engineer alternance - Tossee / DataKhi (2023-2025)
+    > Scraping, deploiement hybride local/Azure, NLP, architecture multi-BDD
+    > API FastAPI < 1s, Graph DB + MongoDB + PostgreSQL pgvector
+  - Developpeur FullStack stage - DataKhi (2023, 4 mois)
+    > Systeme de versioning PowerBI, backend C++, frontend React, Electron
+  ---- CDI (depuis 2025) ----
+  - Data Engineer - Nyukom / DataKhi (oct 2025 - present)
+    > Plateforme data telecom end-to-end : scraping 3CX, API Centreon,
+      data lake MinIO, warehouse PostgreSQL etoile, restitution Power BI
+    > Deploiement complet K3s + Airflow + Ansible (5 roles)
+    > Multi-client, partitionnement, idempotence, backfill historique
+  - ML Engineer - Hall U Need / DataKhi (2025 - present, continuite alternance)
+    > Industrialisation du modele de prediction d'affluence (XGBoost quantile)
+    > 28 modeles, feature engineering meteo/calendrier, calibration intervalles
+    > Pipeline collecte Fabric -> train -> predict, workflow Makefile
+
+  ---- Autres ----
+  - Professeur de Musique (2017-present)
+    > Saxophone (jazz, soul), theorie musicale
+
+CENTRES D'INTERET :
+  - Musique : Saxophone (jazz, soul), orchestre
+  - Sport : Velo quotidien, badminton
+  - Lecture : Science-fiction, essais techniques
+  - Jeux : JDR (jeux de role sur table)
+  - Competitions de programmation : Google Hash Code, Reply Code Challenge,
+    Cloudflight (solutions optimisees en Julia)
+
+================================================================================
+1. INVENTAIRE DES PROJETS ANALYSES
+================================================================================
+
+PROJET DATAKHI #1 : NYUKOM REPORTING DAG
+-----------------------------------------
+Plateforme data telecom : collecte de donnees telephoniques 3CX (web scraping)
+et metriques Centreon (API), stockage MinIO, entrepot PostgreSQL en etoile,
+restitution Power BI.
+> ~22 000 lignes de code | Airflow 3.1.2, K3s, Ansible, Docker, PostgreSQL 17,
+  MinIO, Playwright, Pandas, Parquet
+> Architecture complete : Sources -> DataLake -> DataWarehouse -> Analytics
+> Multi-client, partitionnement, idempotence, backfill historique
+> Deploiement infra complet avec Ansible (5 roles)
+
+PROJET DATAKHI #2 : HUN PREDICTIONS
+-------------------------------------
+Pipeline de machine learning pour la prevision d'affluence restaurant.
+Prediction du nombre de couverts par jour/periode avec XGBoost quantile.
+> 28 modeles independants (2 variantes x 2 periodes x 7 jours)
+> Feature engineering avance : lags, rolling stats, meteo, calendrier,
+  jours feries, ponts, evenements, reservations J-minus, encoding cyclique
+> Loss function custom Huber, calibration des intervalles de confiance
+> Collecte depuis Microsoft Fabric (Azure SQL), export CSV format francais
+> Tests de non-regression (Pearson >= 0.999), workflow Makefile complet
+
+PROJET DATAKHI #3 : SIRENE
+--------------------------------------------------------------
+Pipeline d'ingestion des donnees d'entreprises francaises (base SIRENE INSEE).
+Combine 3 API (SIRENE INSEE, Annuaire Entreprises, Metadonnees INSEE) pour
+construire un referentiel enrichi des entreprises actives.
+> Client API avec rate limiting, pagination par curseur
+> Telechargement bulk en Parquet (PyArrow) : 13M unites legales, 35M etab.
+> Enrichissement API (dirigeants, GPS, NAF 2025)
+> Jointure PyArrow entre unites legales et etablissements
+> Conversion NAF 2025 depuis XLSX officiel INSEE
+> Objectif : alimentation PostgreSQL avec sync incrementale hebdomadaire
+> Stack : Python, PyArrow, Requests, PostgreSQL (cible)
+
+PROJET TOSSEE : PLATEFORME MODE ECO-RESPONSABLE (~15 sous-projets)
+--------------------------------------------------------------------
+Ecosysteme complet pour un aggregateur de mode eco-responsable :
+
+  tossee-crawler     : Scrapy + Selenium + FlareSolverr pour crawler les liens
+                       produits de sites e-commerce mode
+  tossee-scrapper    : Playwright + BeautifulSoup, moteur de regles YAML,
+                       extraction de donnees produit (composition, provenance,
+                       prix, tailles...)
+  tossee-yaml        : Fichiers de configuration YAML par marque (Kiabi, Celio,
+                       Jules, Caroll, Carhartt, etc.) - 20+ marques
+  tossee-ai-agent    : Agent IA (OpenAI Agents SDK + n8n) pour extraction
+                       automatique de donnees depuis HTML, modeles Pydantic
+  tossee-normalisation : Normalisation des donnees produit (genre, composition,
+                        provenance, images), tables partitionnees
+  tossee-chargement  : Chargement en base PostgreSQL, calcul d'impacts
+                       environnementaux via Ecobalyse, consolidation
+  tossee-transform   : Calcul de similarite produit (matrices, edges),
+                       embeddings, recherche utilisateur, detection de
+                       categorie/genre/couleur
+  tossee-data-provenance : Tracabilite et provenance des donnees produit
+  tossee-api         : API backend Python (PostgreSQL, pgvector, embeddings,
+                       recherche semantique, recommandation, similarite)
+  tossee-mobile      : App mobile Flutter/Dart avec :
+                       - Essayage virtuel (Virtual Try-On via Replicate/
+                         HuggingFace API, modele DM-VTON)
+                       - Scan de code-barres (Google ML Kit)
+                       - OAuth multi-provider (Google, Facebook, Microsoft)
+                       - Geolocalisation magasins (flutter_map)
+                       - Firebase Analytics
+                       - Base locale SQLite + sync
+  tossee-addon       : Extension navigateur (React + TypeScript + Tailwind)
+                       pour afficher les impacts environnementaux en temps reel
+  tossee-site        : Site web vitrine (React)
+  tossee-az-functions: Azure Functions (serverless) pour orchestration
+  tossee-ansible     : Deploiement infra avec Ansible
+  tossee-commons     : Modules Python partages (Azure Blob, monitoring)
+
+PROJETS PERSONNELS (depuis le CV / site perso)
+-------------------------------------------------
+  MLOps Homelab Platform (2024-present)
+  > Infra GPU, deploiement agents crewAI avec RAG, services ML automatises
+  > Monitoring Prometheus/Grafana, Proxmox
+  > 5 articles de blog associes sur le site perso
+
+  Systeme de recommandation de livres (sept 2023 - jan 2025)
+  > Pipeline data >100k livres, API NLP, interface Vue.js
+  > MLflow pour versioning modeles
+  > 4 articles de blog associes sur le site perso
+
+  Club Algorithmique (2024-present)
+  > Preparation concours de programmation
+  > Solutions optimisees en Julia
+  > Google Hash Code, Reply Code Challenge, Cloudflight
+
+  Recherche : Harmonisation de melodies (oct 2024)
+  > Modeles, algorithmes et logiciels pour l'harmonisation musicale
+  > Croisement entre passion musicale et competences techniques
+
+BLOG PERSO (https://nathan.leclercq.spacesheep.ovh/posts/)
+------------------------------------------------------------
+  14 articles techniques (2024-2025) couvrant :
+  - Serie Homelab (5 articles) : Proxmox, monitoring, stockage, exposition
+    services, automatisation
+  - Serie Book Reco (4 articles) : Scrapy, transformation, embeddings, API,
+    deploiement/orchestration
+  - Recherche : harmonisation de melodies
+  - Revue Cloud Nord 2024
+  - Tutoriel Hugo (site statique)
+
+BLOG DATAKHI (https://www.datakhi.fr/fr/blog - Auteur Nathan)
+--------------------------------------------------------------
+  1. "Construire une plateforme de donnees souveraine" (jan 2026)
+     -> Architecture MinIO/PostgreSQL/Airflow/K3s, retour d'experience
+  2. "Stockage de fichiers auto-heberge : stockage objet et alternatives" (jan 2026)
+     -> S3, Garage, MinIO, self-hosting
+  3. "Passer a l'open source : comment ca se passe concretement" (jan 2026)
+     -> Migration infra open source pour entreprises
+  4. "Anticiper l'affluence grace au machine learning" (jan 2026)
+     -> XGBoost, prevision de demande, features meteo/calendrier
+  5. "Systemes de recommandation : quelle architecture de BDD choisir" (jan 2026)
+     -> Graph DB vs Vector DB, PostgreSQL/pgvector
+
+
+================================================================================
+2. CARTOGRAPHIE DES COMPETENCES
+================================================================================
+
+COMPETENCE                          | NIVEAU      | SOURCE
+------------------------------------|-------------|---------------------------
+DATA ENGINEERING                    |             |
+  Pipelines ETL (Source->DW)        | Avance      | Nyukom, Tossee
+  Apache Airflow (DAGs, operators)  | Avance      | Nyukom
+  Schema en etoile (dim/faits)      | Avance      | Nyukom
+  Partitionnement de tables         | Avance      | Nyukom, Tossee-normalisation
+  MinIO / Stockage objet S3         | Avance      | Nyukom
+  PostgreSQL (avance)               | Avance      | Nyukom, Tossee
+  Parquet / formats colonnaires     | Intermediaire| Nyukom, HUN
+  Idempotence / backfill            | Avance      | Nyukom
+  Microsoft Fabric / Azure SQL      | Intermediaire| HUN
+  Open Data / API publiques (INSEE) | Intermediaire| Sirene
+  PyArrow (traitement columnar)     | Intermediaire| Sirene, HUN
+                                    |             |
+MACHINE LEARNING / DATA SCIENCE     |             |
+  XGBoost (regression quantile)     | Avance      | HUN
+  Feature engineering               | Avance      | HUN (50+ features)
+  Cross-validation temporelle       | Avance      | HUN
+  Loss function custom (Huber)      | Avance      | HUN
+  Calibration d'intervalles         | Avance      | HUN
+  Prevision de demande              | Avance      | HUN
+  Pandas / NumPy (scientifique)     | Avance      | HUN, Nyukom
+  Scikit-learn                      | Intermediaire| HUN
+                                    |             |
+IA / NLP / AGENTS                   |             |
+  OpenAI API + Agents SDK           | Intermediaire| Tossee-ai-agent
+  LangChain                         | Intermediaire| Tossee-ai-agent (deps)
+  Transformers / HuggingFace        | Intermediaire| Tossee-ai-agent, mobile
+  Embeddings / Recherche vectorielle| Intermediaire| Tossee-api (pgvector)
+  Virtual Try-On (DM-VTON)          | Intermediaire| Tossee-mobile
+  OCR (RapidOCR, Docling)           | Debutant+   | Tossee-ai-agent (deps)
+  TensorFlow / PyTorch              | Intermediaire| Tossee, Master ML, Homelab
+  CamemBERT / Fine-tuning NLP       | Intermediaire| HUN (Tossee textile)
+  MLflow / W&B (experiment tracking) | Intermediaire| Book Reco, Master ML
+  Polars                             | Intermediaire| HUN (CV)
+  Systemes de recommandation         | Intermediaire| Book Reco, Tossee, Blog
+  crewAI / Agents RAG               | Intermediaire| Homelab
+                                    |             |
+WEB SCRAPING / CRAWLING             |             |
+  Playwright (headless automation)  | Avance      | Nyukom, Tossee-scrapper
+  Scrapy                            | Avance      | Tossee-crawler
+  BeautifulSoup                     | Intermediaire| Tossee-scrapper
+  Selenium + FlareSolverr           | Intermediaire| Tossee-crawler
+  Moteur de regles YAML             | Avance      | Tossee-scrapper (DSL custom)
+                                    |             |
+DEVOPS / INFRA                      |             |
+  Kubernetes (K3s)                  | Avance      | Nyukom
+  Docker (multi-image, registry)    | Avance      | Nyukom, Tossee
+  Ansible (IaC, roles, vault)       | Avance      | Nyukom, Tossee-ansible
+  CI/CD (pipelines, Makefile)       | Intermediaire| Nyukom, Tossee
+  Azure Cloud (Functions, Blob,     |             |
+    DevOps Artifacts)               | Intermediaire| Tossee, HUN
+  Gestion de secrets (vault, env)   | Avance      | Nyukom
+  Proxmox / Homelab                 | Intermediaire| Homelab (blog)
+  Prometheus / Grafana              | Intermediaire| Homelab (blog)
+                                    |             |
+DEVELOPPEMENT MOBILE                |             |
+  Flutter / Dart                    | Intermediaire| Tossee-mobile (v1.3.21)
+  OAuth multi-provider              | Intermediaire| Tossee-mobile
+  Firebase Analytics                | Intermediaire| Tossee-mobile
+  SQLite (base locale)              | Intermediaire| Tossee-mobile
+                                    |             |
+DEVELOPPEMENT WEB                   |             |
+  React + TypeScript                | Intermediaire| Tossee-addon, Tossee-site
+  Tailwind CSS                      | Intermediaire| Tossee-addon
+  Extension navigateur (Chrome)     | Intermediaire| Tossee-addon
+  FastAPI                           | Avance      | Tossee-api
+  API REST (Python)                 | Avance      | Tossee-api, Nyukom
+  Vue.js                            | Debutant+   | Book Reco
+                                    |             |
+REDACTION TECHNIQUE                 |             |
+  Articles de blog technique        | Avance      | 5 articles publies
+  Documentation de projet           | Avance      | CLAUDE.md, READMEs, docs/
+  Vulgarisation technique           | Avance      | Blog DataKhi
+                                    |             |
+LANGAGES SUPPLEMENTAIRES (CV)       |             |
+  Go, Haskell, Rust                 | Debutant+   | CV (formation/perso)
+  Julia                             | Intermediaire| Competitions algo
+  R                                 | Debutant+   | CV (formation)
+  C++                               | Intermediaire| Stage DataKhi (PowerBI)
+  GraphQL                           | Intermediaire| Tossee
+
+
+================================================================================
+3. PROFIL TYPE
+================================================================================
+
+TITRE : Data Engineer / ML Engineer Junior-Confirmant
+SOUS-TITRE : Profil "couteau suisse" data avec forte composante infra
+
+Tu as un profil atypique et tres complet pour 1 an d'experience. Voici ce qui
+ressort :
+
+FORCES MAJEURES :
+  1. Data Engineering end-to-end : Tu maitrises toute la chaine, de la collecte
+     (scraping, API) au warehouse (star schema, partitionnement), en passant par
+     l'orchestration (Airflow) et le stockage intermediaire (MinIO, Parquet).
+     C'est rare a ce niveau d'experience.
+
+  2. Infra/DevOps solide : Kubernetes, Ansible, Docker, registres prives...
+     Tu ne te contentes pas d'ecrire du code, tu deploies et operes toi-meme
+     les plateformes. C'est un vrai differenciateur.
+
+  3. ML applique, pas academique : Le projet HUN montre une vraie maturite
+     (loss custom, calibration, feature engineering metier, tests de
+     non-regression). Ce n'est pas du ML de tutorial, c'est du ML en production.
+
+  4. Polyvalence technique : Python, Dart, TypeScript, SQL, YAML DSL, Ansible
+     YAML... Tu passes d'un langage/paradigme a l'autre sans probleme.
+
+  5. Capacite a produire et livrer : Chaque projet est un systeme complet,
+     deployable, avec de la doc. Tu ne fais pas des POC, tu livres.
+
+  6. Redaction technique : Les articles de blog montrent une capacite a
+     structurer et communiquer des idees techniques complexes.
+
+  7. Curiosite et autonomie hors missions client : Homelab (infra GPU,
+     Proxmox, monitoring, agents IA), Book Reco (reco NLP >100k livres,
+     Vue.js, MLflow), Club Algo (Julia, concours Google Hash Code / Reply /
+     Cloudflight), Recherche harmonisation musicale, Site perso Hugo.
+     Tu ne t'arretes pas aux missions : tu explores, tu construis, tu documentes.
+
+AXES DE PROGRESSION :
+  - Tests automatises (peu de pytest/unittest dans les projets)
+  - Monitoring/observabilite en production (logs structures, metriques)
+  - Deep Learning (TensorFlow/PyTorch sont en dependance mais pas en code natif)
+  - Architecture logicielle avancee (patterns, clean architecture)
+  - Contributions open source (visibilite)
+
+
+================================================================================
+4. ORIENTATIONS METIER RECOMMANDEES
+================================================================================
+
+OPTION 1 : DATA ENGINEER (Recommande - Alignement naturel)
+-----------------------------------------------------------
+Pourquoi : C'est ton coeur de metier actuel. Tu as deja un niveau
+"intermediaire-avance" qui est exceptionnel pour 1 an.
+
+  Postes cibles :
+  - Data Engineer (2-5 ans d'XP sur les offres, tu es deja au niveau)
+  - Platform Data Engineer (profil infra + data, tres recherche)
+  - Data Engineer Cloud (on-premise -> cloud, tu connais les deux)
+
+  Salaire indicatif (Paris, 2026) : 42-55k EUR brut
+  Entreprises types : Scale-ups tech, ESN premium (Artefact, Quantmetry,
+    Dataiku), grands groupes en transformation data
+
+  Pour consolider : Spark/Databricks, dbt, Terraform, cloud certifications
+
+
+OPTION 2 : ML ENGINEER (Excellent potentiel)
+----------------------------------------------
+Pourquoi : Le projet HUN est un vrai projet ML en production, pas un notebook
+Kaggle. Tu as les bases solides pour evoluer vers ce role.
+
+  Postes cibles :
+  - ML Engineer Junior-Confirme
+  - Applied ML Engineer
+  - MLOps Engineer (intersection ML + DevOps = ta double competence)
+
+  Salaire indicatif (Paris, 2026) : 45-58k EUR brut
+  Entreprises types : Startups IA, labs de grands groupes, Criteo, Datadog,
+    OVHcloud, Alan, ...
+
+  Pour consolider : MLflow/MLOps, deep learning (NLP ou vision), statistiques
+  avancees, experimentations A/B
+
+
+OPTION 3 : FULLSTACK DATA (Profil atypique et rare)
+-----------------------------------------------------
+Pourquoi : Tu es l'un des rares profils capables de creer un produit data
+end-to-end seul : collecte, pipeline, ML, API, app mobile, deploiement.
+
+  Postes cibles :
+  - Lead technique data (dans une petite equipe)
+  - CTO technique data (startup early-stage)
+  - Freelance / Consultant data senior
+  - Entrepreneur technique (tu as deja le profil)
+
+  Salaire indicatif : Variable (freelance 500-700 EUR/j, CTO startup equity)
+
+  Pour consolider : Management d'equipe, architecture systeme, communication
+  client, vision produit
+
+
+OPTION 4 : DEVOPS / PLATFORM ENGINEER (Bonne alternative)
+-----------------------------------------------------------
+Pourquoi : Ton experience Kubernetes + Ansible + Docker + registres prives
+est solide. Couple a ta comprehension des besoins data, c'est un profil
+"Data Platform Engineer" tres demande.
+
+  Postes cibles :
+  - DevOps Engineer
+  - Platform Engineer
+  - Site Reliability Engineer (SRE)
+
+  Salaire indicatif (Paris, 2026) : 45-60k EUR brut
+
+  Pour consolider : Terraform, monitoring (Prometheus/Grafana), CI/CD avance
+  (GitLab CI, GitHub Actions), cloud provider certifications
+
+
+================================================================================
+5. RECOMMANDATION FINALE
+================================================================================
+
+COURT TERME (0-2 ans) : Data Engineer ou ML Engineer
+  -> Capitalise sur tes forces actuelles. Choisis un axe principal entre
+     "pipeline/infra data" et "ML en production" selon tes affinites.
+
+MOYEN TERME (2-4 ans) : Staff/Lead Data Engineer ou MLOps Engineer
+  -> Ta polyvalence te permettra de prendre des roles transverses rapidement.
+
+LONG TERME (4+ ans) : Au choix :
+  - Head of Data / CTO data dans une scale-up
+  - Expert independant / consultant senior
+  - Entrepreneur technique (tu as deja la capacite de construire seul)
+
+TON AVANTAGE COMPETITIF :
+  La plupart des profils juniors maitrisent soit le data engineering,
+  soit le ML, soit le DevOps. Toi tu couvres les trois, avec en plus du
+  mobile et du web. C'est cet "empan technique" qui fait ta valeur sur
+  le marche. Ne te specialise pas trop vite : cette polyvalence est ton
+  meilleur atout a ce stade de ta carriere.
+
+================================================================================
+Genere le 2026-02-13 par analyse automatique de :
+  - /home/nathan-leclercq/Documents/datakhi/nyukom-reporting-dag/
+  - /home/nathan-leclercq/Documents/datakhi/hun-predictions/
+  - /home/nathan-leclercq/Documents/datakhi/tmp/sirene/
+  - /home/nathan-leclercq/Documents/tossee/ (15 sous-projets)
+  - https://www.datakhi.fr/fr/blog (5 articles)
+================================================================================
