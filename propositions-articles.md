@@ -1,234 +1,185 @@
-# Propositions d'articles — Catalogue complet
+# Propositions d'articles — catalogue filtré (MLOps frugal et souverain)
 
-Légende carrière :
-- **A** = Data Engineer (pipelines, orchestration, warehouse)
-- **B** = ML Engineer / MLOps (industrialisation ML, serving, monitoring)
-- **C** = Fullstack Data / Lead Tech / CTO (produit, polyvalence, architecture)
-- **D** = Platform Engineer / SRE (infra, observabilité, sécurité)
+Catalogue d'idées d'articles aligné avec la direction "référent contenu MLOps frugal et souverain" (cf. `~/Documents/perso/TODO.md`). Les articles non-alignés (data eng pur sans angle MLOps, infra pure sans angle frugalité, side-projects hors positionnement) ont été retirés du précédent catalogue.
+
+Note de tonalité pour tous les articles : l'angle souveraineté n'est PAS "remplacer AWS/Azure/GCP" — c'est "monter du self-host à côté du cloud existant pour les workloads sensibles (modèles, RAG, données users), diversifier les dépendances critiques, reprendre le contrôle ciblé". Cette nuance ouvre le marché aux clients déjà sur cloud US (= 80% du marché), au lieu de leur dire "il faut tout migrer".
+
+À piocher selon les opportunités et les phases du plan opérationnel.
 
 ---
 
 ## 1. Renvoi vers le blog DataKhi
 
-**Concept** : Un post court (pas un article technique) qui présente tes 5 articles publiés sur le blog DataKhi, avec le contexte personnel de chacun (pourquoi tu l'as écrit, sur quelle mission). Pas de paraphrase, juste le renvoi.
+**Concept** : Un post court qui présente tes articles publiés sur le blog DataKhi, avec le contexte personnel de chacun (pourquoi tu l'as écrit, sur quelle mission). Pas de paraphrase, juste le renvoi.
 
-**Ce que ça implique de ta part** : Rien. Juste valider le texte.
+**Ce que ça implique de ta part** : Rien. Valider le texte.
 
-**Carrière** : Transversal. Montre que tu publies en contexte pro. Signal de crédibilité pour tout recruteur.
-
----
-
-## 2. Observabilité d'un pipeline data : OpenTelemetry, logs structurés et alerting
-
-**Concept** : Prendre un de tes pipelines existants (Nyukom ou Book Reco) et ajouter une couche d'observabilité complète : logs structurés (structlog), traces OpenTelemetry, métriques custom Prometheus, alerting (Alertmanager ou Grafana alerts). Documenter le avant/après.
-
-**Ce que ça implique de ta part** : Projet homelab. Installer OpenTelemetry collector sur ton K3s, instrumenter un pipeline Python existant, configurer des dashboards Grafana et des règles d'alerte. ~1-2 weekends de travail.
-
-**Carrière** : **B+D**. Comble ta lacune la plus visible (observabilité). Les offres ML Engineer et Platform Engineer demandent systématiquement cette compétence.
+**Alignement direction** : Transversal. Crédibilise ton blog perso en montrant que tu publies aussi en pro.
 
 ---
 
-## 3. Tests automatisés pour pipelines data : pytest, Great Expectations, tests de contrat
+## 2. Observabilité d'un pipeline data + ML : OpenTelemetry, logs structurés, alerting
 
-**Concept** : Ajouter une suite de tests complète à un pipeline existant. Tests unitaires (pytest), tests de qualité de données (Great Expectations ou Soda), tests d'intégration, tests de non-régression. Montrer le setup, les patterns, et ce que ça change dans la confiance qu'on a dans le pipeline.
+**Concept** : Prendre un de tes pipelines (Nyukom côté Datakhi anonymisé, ou knowledge-mcp côté perso) et ajouter une couche d'observabilité complète : logs structurés (structlog), traces OpenTelemetry → Tempo, métriques custom Prometheus, alerting (Alertmanager ou Grafana alerts). Documenter le avant/après en termes de signal opérationnel.
 
-**Ce que ça implique de ta part** : Prendre un projet existant (Book Reco est idéal car public) et ajouter les tests. ~1-2 weekends.
+**Ce que ça implique de ta part** : Instrumenter une app existante. ~1-2 weekends.
 
-**Carrière** : **A+B**. Comble ta lacune "pas de tests dans les projets". Signal de maturité ingénieur, très regardé par les boîtes sérieuses.
-
----
-
-## 4. Entraîner un modèle deep learning from scratch sur un homelab GPU
-
-**Concept** : Un projet NLP ou vision modeste mais entraîné from scratch avec PyTorch sur ton serveur GPU. Pas un fine-tuning de modèle pré-entraîné — un entraînement complet avec dataset, architecture, training loop, évaluation. Documenter les choix, les galères GPU (CUDA, mémoire), les résultats.
-
-**Ce que ça implique de ta part** : Choisir un problème (classification de texte, détection d'objet, génération...), collecter ou trouver un dataset, coder le training loop PyTorch, itérer. ~3-5 weekends. C'est le plus gros investissement de la liste.
-
-**Carrière** : **B fort**. Comble ta lacune "PyTorch en dépendance mais pas en code natif". Ouvre les portes des offres ML Engineer qui demandent du deep learning.
+**Alignement direction** : MLOps core. L'observabilité ML est une des compétences les plus regardées dans les offres MLOps.
 
 ---
 
-## 5. Construire un feature store artisanal avec PostgreSQL et Redis
+## 3. Sustainable MLOps : mesurer + optimiser un cluster qui sert du RAG/LLM
 
-**Concept** : Implémenter un feature store minimaliste sur ton homelab. Stockage des features dans PostgreSQL (offline store) et Redis (online store pour le serving temps réel). Point d'entrée unique pour le feature engineering, versionning des features, backfill. Comparer avec Feast/Tecton pour montrer ce qu'on gagne et ce qu'on perd.
+**Concept** : Comment mesurer la conso énergétique d'un cluster k3s qui sert des modèles ML/RAG (Ollama, knowledge-mcp, embedding pipelines). Outils : Kepler (per-pod via eBPF + RAPL), smart plug Shelly pour le total mur, dashboards Grafana. Avant/après optim (schedutil governor, PowerTOP autotune, KEDA scale-to-zero, retentions courtes, drops services inutiles).
 
-**Ce que ça implique de ta part** : Projet homelab. Coder le feature store en Python, l'intégrer avec un pipeline existant (HUN ou Book Reco). ~2-3 weekends.
+**Ce que ça implique de ta part** : Cleanup homelab + Kepler installés + Shelly branchée (déjà sur le TODO racine). ~10h rédaction + capture des graphes.
 
-**Carrière** : **B**. Les feature stores sont un sujet MLOps avancé. Peu de juniors en ont construit un. Différenciant.
+**Alignement direction** : Cœur de la niche frugal. Quasi-vide en français. **Candidat fort HN**.
 
 ---
 
-## 6. Servir un modèle ML en production : comparatif BentoML, FastAPI, Seldon
+## 4. RAG d'entreprise en production via MCP — retex knowledge-mcp / drive-knowledge-mcp
 
-**Concept** : Prendre un modèle existant (le XGBoost HUN par exemple) et le servir de 3 manières différentes. Comparer les performances (latence, throughput), la facilité de déploiement sur K3s, le monitoring, le versionning. Lequel choisir et quand.
+**Concept** : Comment mettre un RAG d'entreprise en production accessible via Model Context Protocol, **sans envoyer les documents sensibles à un LLM tiers**. Architecture hybride pgvector + tsvector + trigram + RRF, embeddings Nomic Embed via Ollama (local), indexation incrémentale via delta. Couvrir aussi le côté MLOps : déploiement (k8s), monitoring du pipeline d'embedding, gestion du modèle Nomic, CronJob reindex GPU. Angle commercial fort : tu peux brancher le RAG sur des sources SharePoint/Confluence/Drive qui vivent déjà dans le cloud US d'une boîte, et garder l'intelligence (embeddings + LLM) chez toi. Pas un remplacement de SharePoint — un complément qui reprend le contrôle de la couche IA.
 
-**Ce que ça implique de ta part** : Projet homelab. Déployer les 3 solutions sur ton K3s, benchmarker. ~2 weekends.
+**Ce que ça implique de ta part** : v0 drive-knowledge-mcp livré côté Datakhi + accord pour le détailler publiquement (anonymisé). ~12h.
 
-**Carrière** : **B**. Model serving est un skill MLOps core. L'approche comparative montre du recul.
+**Alignement direction** : RAG en prod est un sous-domaine MLOps central, MCP est un standard montant. **Candidat fort HN, awesome-mcp PR, awesome-rag PR**.
+
+---
+
+## 5. Orchestration de pipelines MLOps : Airflow vs Kestra vs n8n
+
+**Concept** : Comparatif sur un pipeline ETL + ML réel (extraction SIRENE open data INSEE → enrichissement embeddings → indexation pgvector). Trois outils, mêmes objectifs, comparer expérience développeur, performances, facilité de déploiement sur k3s, gestion des dépendances ML, monitoring. Inclure le volet "orchestration de jobs ML" (batch inference, reindex périodique).
+
+**Ce que ça implique de ta part** : Kestra déployé en local + pipeline porté en 3 versions. ~15h, c'est le plus lourd.
+
+**Alignement direction** : MLOps + data eng. Comparatif quasi-vide en français.
+
+---
+
+## 6. Servir un modèle ML en production : comparatif BentoML vs vLLM vs TGI vs Ollama
+
+**Concept** : Prendre un modèle (un quantile XGBoost type HUN et/ou un LLM 7B) et le servir de plusieurs manières. Comparer les performances (latence, throughput, conso GPU), la facilité de déploiement sur k3s, le monitoring, le versionning, la cohabitation GPU avec d'autres workloads. Inclure l'angle frugalité : VRAM consommée, modèles quantifiés.
+
+**Ce que ça implique de ta part** : Déployer 3-4 stacks de serving sur k3s + benchmarks reproductibles. ~2-3 weekends.
+
+**Alignement direction** : Model serving = MLOps core. L'angle quantification + frugalité est rarement abordé.
 
 ---
 
 ## 7. Data drift et monitoring de modèles ML en production
 
-**Concept** : Mettre en place un système de détection de data drift et concept drift sur un modèle en production. Utiliser Evidently ou Whylabs, intégrer avec Prometheus/Grafana pour les alertes. Montrer un cas concret : quand les données changent (météo exceptionnelle, changement de comportement client), le modèle se dégrade-t-il ?
+**Concept** : Détection de data drift et concept drift sur un modèle perso (XGBoost HUN si autorisé, sinon un modèle simulé). Outils : Evidently ou Whylabs, intégration Prometheus/Grafana pour les alertes. Cas concret avec données simulées ou réelles (météo exceptionnelle, changement comportement).
 
-**Ce que ça implique de ta part** : Projet homelab. Simuler ou utiliser des vraies dérives sur les données HUN. ~2 weekends.
+**Ce que ça implique de ta part** : ~2 weekends.
 
-**Carrière** : **B fort**. Le monitoring de modèles est le sujet MLOps le plus demandé et le moins maîtrisé par les juniors.
-
----
-
-## 8. GitOps sur K3s : ArgoCD pour déployer des pipelines data
-
-**Concept** : Remplacer ou compléter tes déploiements Ansible par du GitOps avec ArgoCD. Un push sur le repo = un déploiement automatique sur K3s. Montrer le setup, la gestion des secrets, le rollback, et comment ça s'intègre avec un workflow data (DAGs Airflow, images Docker).
-
-**Ce que ça implique de ta part** : Projet homelab. Installer ArgoCD sur ton K3s, migrer un ou deux déploiements. ~1-2 weekends.
-
-**Carrière** : **D+A**. GitOps est standard dans le monde platform/SRE. Complète ton profil infra.
+**Alignement direction** : MLOps core. Le monitoring de modèles est le sujet MLOps le plus demandé et le moins maîtrisé.
 
 ---
 
-## 9. Construire un système RAG complet sur un homelab
+## 8. LLM observability self-hosted avec Langfuse + Tempo + Prom
 
-**Concept** : Un pipeline Retrieval-Augmented Generation de bout en bout sur ton infra. Ingestion de documents (PDF, Markdown), chunking, embeddings (modèle open source type e5 ou bge), stockage dans pgvector, API de requêtage avec un LLM local (Ollama/vLLM) ou distant. Pas un tuto LangChain — une implémentation maison qui montre les choix d'architecture.
+**Concept** : Comment instrumenter une app LLM (knowledge-mcp côté perso) pour avoir traces, eval, prompt versioning, monitoring qualité réponse. Stack : Langfuse + Tempo OTLP + Prometheus + Grafana, tout chez soi. Comparer avec les solutions SaaS (LangSmith, etc.) sur les axes coût, souveraineté des prompts/traces (qui peuvent contenir de la donnée sensible client), et lock-in.
 
-**Ce que ça implique de ta part** : Projet homelab. Tu as déjà pgvector et un serveur GPU. Coder le pipeline d'ingestion, le retriever, et l'interface de requêtage. ~2-3 weekends.
+**Ce que ça implique de ta part** : Langfuse déployé sur k3s + knowledge-mcp instrumenté. ~1-2 weekends.
 
-**Carrière** : **B+C**. RAG est le use case LLM le plus demandé en entreprise. Montre que tu sais construire un produit IA complet.
-
----
-
-## 10. Déployer Airflow sur K3s : retour d'expérience et pièges
-
-**Concept** : Un article pratico-pratique sur le déploiement d'Airflow en production sur K3s. Les choix (Helm vs manifestes custom, CeleryExecutor vs KubernetesExecutor), la gestion des ressources, la synchronisation des DAGs, les problèmes réseau inter-namespaces, le monitoring. Pas un tuto — un retour d'expérience honnête.
-
-**Ce que ça implique de ta part** : Rien de nouveau si tu documentes ce que tu as déjà fait sur Nyukom. Juste rédiger.
-
-**Carrière** : **A+D**. Airflow + K3s est un combo très demandé. L'article montre que tu opères de l'infra data pour de vrai.
+**Alignement direction** : MLOps moderne, niche très peu couverte. Angle commercial : les prompts d'une app LLM d'entreprise contiennent souvent des morceaux de données utilisateurs / docs internes — les envoyer à un SaaS US d'observabilité fait passer ces données par un tiers. Self-host = un cas où le contrôle est légitime, pas idéologique.
 
 ---
 
-## 11. Comparer les orchestrateurs data : Airflow vs Dagster vs Prefect
+## 9. Embedding models pour le français : comparatif Nomic vs BGE-M3 vs Jina vs OpenAI
 
-**Concept** : Déployer les 3 sur ton homelab, faire tourner le même pipeline sur chacun, comparer l'expérience développeur, les performances, la facilité de déploiement sur K3s, la communauté. Tu connais Airflow — découvrir les alternatives et avoir un avis argumenté.
+**Concept** : Benchmark sur corpus français (extraits SIRENE / posts blog / corpus knowledge-mcp). Métriques : MRR, recall@k, latence, RAM, coût. Inclure l'aspect "local vs API" et l'impact sur la souveraineté.
 
-**Ce que ça implique de ta part** : Installer Dagster et Prefect, porter un pipeline simple. ~2-3 weekends.
+**Ce que ça implique de ta part** : Benchmark scripts + corpus + capture résultats. ~2 weekends.
 
-**Carrière** : **A**. Montre de la culture technique et du recul. Les seniors comparent, les juniors utilisent ce qu'on leur dit.
-
----
-
-## 12. Lakehouse maison : MinIO + DuckDB (ou Spark) sur un homelab
-
-**Concept** : Construire une architecture lakehouse sur ton infra. MinIO comme stockage (tu l'as déjà), DuckDB ou Spark pour le traitement, format Parquet/Iceberg. Montrer que le pattern lakehouse n'est pas réservé à Databricks — on peut le faire sur du matériel qu'on possède.
-
-**Ce que ça implique de ta part** : Projet homelab. Installer DuckDB ou Spark, configurer la lecture depuis MinIO, écrire quelques transformations. ~1-2 weekends.
-
-**Carrière** : **A fort**. Le lakehouse et les formats de table ouverts (Iceberg, Delta) sont le sujet data engineering de 2025-2026. Comble ton manque de Spark/Databricks.
+**Alignement direction** : RAG + souveraineté. Très peu de benchmarks FR disponibles publiquement.
 
 ---
 
-## 13. Streaming data : Redpanda (ou Kafka) sur un homelab
+## 10. Feature store artisanal avec PostgreSQL + Redis
 
-**Concept** : Ajouter une couche streaming à ton infra. Installer Redpanda (Kafka-compatible, plus léger), construire un pipeline qui ingère des événements en temps réel, les transforme, et les charge en base. Cas d'usage : ingestion de logs, métriques temps réel, ou CDC (Change Data Capture).
+**Concept** : Feature store minimaliste sur ton homelab. PostgreSQL (offline store) + Redis (online store pour serving temps réel). Point d'entrée unique pour le feature engineering, versionning, backfill. Comparer avec Feast/Tecton (montrer ce qu'on gagne et ce qu'on perd en restant artisanal).
 
-**Ce que ça implique de ta part** : Projet homelab. Installer Redpanda sur K3s, écrire un producer/consumer, intégrer avec PostgreSQL. ~2 weekends.
+**Ce que ça implique de ta part** : Coder le feature store en Python + intégration avec un pipeline existant (HUN ou Book Reco). ~2-3 weekends.
 
-**Carrière** : **A**. Le streaming est un trou dans ton profil (tout est batch actuellement). Les offres Data Engineer mid/senior demandent souvent Kafka.
-
----
-
-## 14. App mobile + ML embarqué : retour d'expérience Flutter et Virtual Try-On
-
-**Concept** : Documenter le développement de l'app mobile Tossée — le virtual try-on (DM-VTON via Replicate/HuggingFace), le scan de code-barres, l'OAuth multi-provider, la géolocalisation. Un data engineer qui fait du mobile avec du ML vision, c'est atypique. Montrer le processus, les galères, les compromis (API distante vs ML embarqué).
-
-**Ce que ça implique de ta part** : Rien de nouveau — juste documenter ce que tu as déjà fait.
-
-**Carrière** : **C**. Signal de polyvalence extrême. Idéal pour le positionnement "je peux construire un produit seul".
+**Alignement direction** : MLOps avancé, différenciant. Très peu de profils juniors ont construit un feature store maison.
 
 ---
 
-## 15. Terraform pour un homelab : infrastructure as code au-delà d'Ansible
+## 11. Lakehouse léger et contrôlé : MinIO/Garage + DuckDB pour analytics ML
 
-**Concept** : Compléter Ansible (qui gère la configuration) avec Terraform (qui gère le provisionnement). Provisionner les VMs Proxmox, les namespaces K3s, les buckets MinIO, les bases PostgreSQL avec Terraform. Montrer la complémentarité Terraform + Ansible.
+**Concept** : Architecture lakehouse sur infra qu'on possède. Stockage MinIO ou Garage (S3-compat), DuckDB pour le traitement, format Parquet/Iceberg. Démontrer que le pattern lakehouse n'est pas réservé à Databricks/Snowflake — il peut tourner sur du hardware modeste et coexister avec un Databricks/Snowflake existant pour les use cases qui n'ont pas besoin du géant cloud. Inclure un cas d'usage ML (feature engineering sur lakehouse).
 
-**Ce que ça implique de ta part** : Projet homelab. Apprendre Terraform (si pas déjà fait), écrire les modules pour ton infra. ~2-3 weekends.
+**Ce que ça implique de ta part** : DuckDB + Iceberg/Parquet sur ton MinIO/Garage, quelques transformations. ~1-2 weekends.
 
-**Carrière** : **D+A**. Terraform est le trou le plus visible de ton profil infra. Quasi-obligatoire pour les offres Platform Engineer et demandé en Data Engineer senior.
-
----
-
-## 16. CI/CD complète avec Gitea Actions : du push au déploiement
-
-**Concept** : Tu as Gitea sur ton homelab. Configurer Gitea Actions (compatible GitHub Actions) pour automatiser : lint, tests, build Docker, push registre, déploiement K3s. Une pipeline CI/CD complète et auto-hébergée. Montrer que CI/CD n'est pas réservé à GitHub/GitLab.
-
-**Ce que ça implique de ta part** : Projet homelab. Configurer le runner Gitea Actions, écrire les workflows. ~1-2 weekends.
-
-**Carrière** : **D+A**. CI/CD est attendu partout. Le fait de le self-hoster montre une compréhension profonde.
+**Alignement direction** : Souveraineté ciblée + data eng moderne. Aligne directement avec ton talk DevLille. Angle commercial : tu n'attaques pas Databricks ou Snowflake, tu offres une option pour les workloads qui ne justifient pas leur coût ou leur dépendance.
 
 ---
 
-## 17. Agents IA autonomes : construire un agent qui résout un vrai problème
+## 12. Airflow sur K3s : retex et pièges
 
-**Concept** : Construire un agent IA qui fait quelque chose d'utile et de concret (pas un chatbot). Exemples : un agent qui monitore tes DAGs Airflow et crée des tickets quand ça casse, un agent qui analyse les logs et propose des corrections, un agent de veille technique qui résume les nouvelles publications. Utiliser l'OpenAI Agents SDK, crewAI, ou LangGraph.
+**Concept** : Retex pratique sur le déploiement d'Airflow en production sur K3s (sur Nyukom). Choix Helm vs manifestes custom, CeleryExecutor vs KubernetesExecutor, gestion des ressources, sync DAGs, problèmes réseau inter-namespaces, monitoring. Pas un tuto, un retour d'expérience honnête.
 
-**Ce que ça implique de ta part** : Projet homelab. Choisir le use case, implémenter l'agent, le déployer sur ton infra. ~2-3 weekends.
+**Ce que ça implique de ta part** : Rien — documenter ce que tu as déjà fait.
 
-**Carrière** : **B+C**. Les agents IA sont le sujet de 2025-2026. Montre que tu es à la pointe. Le côté "résout un vrai problème" te différencie des tutos.
-
----
-
-## 18. Sécuriser un homelab : hardening, réseau, secrets, audit
-
-**Concept** : Documenter la sécurisation de ton infra. Network policies K3s, gestion des secrets (Ansible Vault vs Sealed Secrets vs External Secrets), HTTPS everywhere, fail2ban, audit de sécurité, principe de moindre privilège. Un sujet rarement couvert par les homelabbers.
-
-**Ce que ça implique de ta part** : Audit et renforcement de ton infra existante. ~2 weekends.
-
-**Carrière** : **D**. La sécurité est un différenciateur fort. Très peu de profils data s'en préoccupent.
+**Alignement direction** : MLOps + ops. Article "gratuit" (rédaction pure), excellent pour la cadence.
 
 ---
 
-## 19. dbt sur PostgreSQL : transformation de données déclarative sur un homelab
+## 13. Agents IA autonomes pour MLOps : automatiser le monitoring d'un cluster ML
 
-**Concept** : Installer dbt, le brancher sur ton PostgreSQL, réécrire une partie de tes transformations Nyukom ou Book Reco en dbt. Montrer les tests dbt, la documentation auto-générée, le lineage. Comparer avec l'approche Python/Pandas actuelle.
+**Concept** : Construire un agent IA qui fait quelque chose d'utile et concret côté MLOps. Exemple : un agent qui monitore Airflow + Prometheus, détecte les anomalies sur les pipelines ML, et ouvre des issues Forgejo avec contexte. Stack : Claude / qwen3 via Ollama, Model Context Protocol (réutiliser le pattern knowledge-mcp), Forgejo API. Pas un chatbot — un assistant ops.
 
-**Ce que ça implique de ta part** : Projet homelab. Apprendre dbt, migrer quelques transformations. ~1-2 weekends.
+**Ce que ça implique de ta part** : Coder l'agent + l'intégrer à ton homelab. ~2-3 weekends.
 
-**Carrière** : **A fort**. dbt est devenu quasi-standard en data engineering. C'est le trou le plus facile à combler dans ton profil DE.
-
----
-
-## 20. Scraping à grande échelle : architecture, anti-détection et éthique
-
-**Concept** : Tu as une vraie expertise en scraping (Playwright, Scrapy, Selenium, FlareSolverr, moteur YAML). Documenter les patterns d'architecture pour du scraping en production à grande échelle : gestion du rate limiting, rotation de proxies, anti-détection, parallélisme, gestion des erreurs, respect des robots.txt. Un article de référence, pas un tuto débutant.
-
-**Ce que ça implique de ta part** : Rien de nouveau — documenter ton expertise existante.
-
-**Carrière** : **A+C**. Le scraping est une compétence niche très demandée. Se positionner comme expert sur le sujet.
+**Alignement direction** : Agents IA = sujet 2025-2026, et tu as déjà la stack MCP en place. Te positionne sur l'IA appliquée à l'ops.
 
 ---
 
-## Résumé par effort et impact
+## 14. Postmortem MLOps Tossée — un pipeline ML d'écoconception textile qui n'est pas allé en prod
 
-| # | Article | Effort | Carrière | Comble une lacune ? |
-|---|---------|--------|----------|---------------------|
-| 1 | Renvoi blog DataKhi | Nul | Transversal | Non |
-| 2 | Observabilité pipeline | 1-2 WE | B+D | **Oui** (observabilité) |
-| 3 | Tests automatisés pipeline | 1-2 WE | A+B | **Oui** (tests) |
-| 4 | Deep learning from scratch GPU | 3-5 WE | B | **Oui** (DL natif) |
-| 5 | Feature store artisanal | 2-3 WE | B | Non |
-| 6 | Model serving comparatif | 2 WE | B | Non |
-| 7 | Data drift monitoring | 2 WE | B | Non |
-| 8 | GitOps ArgoCD | 1-2 WE | D+A | Non |
-| 9 | Système RAG complet | 2-3 WE | B+C | Non |
-| 10 | Airflow sur K3s (retour XP) | Nul | A+D | Non |
-| 11 | Comparatif orchestrateurs | 2-3 WE | A | Non |
-| 12 | Lakehouse MinIO + DuckDB | 1-2 WE | A | **Oui** (Spark/lakehouse) |
-| 13 | Streaming Redpanda/Kafka | 2 WE | A | **Oui** (streaming) |
-| 14 | Flutter Virtual Try-On (retour XP) | Nul | C | Non |
-| 15 | Terraform homelab | 2-3 WE | D+A | **Oui** (Terraform) |
-| 16 | CI/CD Gitea Actions | 1-2 WE | D+A | Non |
-| 17 | Agents IA autonomes | 2-3 WE | B+C | Non |
-| 18 | Sécurité homelab | 2 WE | D | Non |
-| 19 | dbt sur PostgreSQL | 1-2 WE | A | **Oui** (dbt) |
-| 20 | Scraping à grande échelle | Nul | A+C | Non |
+**Concept** : Retex honnête sur Tossée (projet archived, AGPL v3, public sur GitHub) : un pipeline ML de scoring d'impact environnemental textile, multi-marques (67 brands YAML), end-to-end (Scrapy → Playwright → normalisation → PyTorch embeddings → FastAPI + pgvector → app mobile Flutter + extension navigateur). Qu'est-ce qui a marché, qu'est-ce qui n'a pas, pourquoi le projet n'est pas allé en production, ce qu'on referait autrement. Très différenciant : peu de postmortems MLOps publics, surtout sur des projets à impact env.
+
+**Ce que ça implique de ta part** : Rien à coder, c'est de la rédaction sur du vécu. Le repo est déjà public et documenté. ~10-15h de rédaction propre.
+
+**Alignement direction** : Écoconception produit (Ecobalyse, scoring env) + MLOps complet + retex honnête. Couvre une dimension qui complète bien "frugalité infra" : pas seulement optimiser un cluster, mais mesurer l'impact d'un produit ML qu'on construit. Angle marché : AI Act + scope 3 + Boavizta + Green Software Foundation.
+
+---
+
+## 15. Scraping à grande échelle : architecture, anti-détection, éthique
+
+**Concept** : Documenter ton expertise scraping (Playwright, Scrapy, Selenium, FlareSolverr, moteur YAML maison) à partir du retex Tossée et Nyukom. Patterns d'architecture en production : rate limiting, rotation de proxies, anti-détection, parallélisme, gestion erreurs, robots.txt. Article de référence, pas un tuto débutant.
+
+**Ce que ça implique de ta part** : Rien — documenter ton expertise existante. ~0 weekend (rédaction pure).
+
+**Alignement direction** : Compétence niche très demandée, différenciante. Indirectement lié MLOps (collecte de données pour training).
+
+---
+
+## 16. Générateur de covers d'articles en code (méta-post)
+
+**Concept** : Comment générer les images de cover de ce blog en code, paramétré par embedding du post (Nomic via Ollama, déjà déployé). Algorithme génératif (flow field, Voronoï, reaction-diffusion) sous contrainte d'un mot-clé / icône qui transparait. Refuser stock photo + Midjourney + IA bloated. Inclure le code complet du générateur.
+
+**Ce que ça implique de ta part** : Générateur fonctionnel pour 5+ posts (cf. `~/Documents/perso/TODO-blog-covers.md`). ~3 weekends total dont une partie pour la rédaction.
+
+**Alignement direction** : Aligne sobriété + tech + créatif. Méta-article qui montre que tu pratiques ce que tu prêches.
+
+---
+
+## Hors catalogue (volontairement supprimés)
+
+Pour mémoire, articles présents dans la version précédente du catalogue mais retirés car non-alignés avec la direction MLOps frugal et souverain :
+
+- Tests automatisés pour pipelines data (data eng pur, pas MLOps core)
+- Deep learning from scratch sur GPU (trop large, déjà couvert par Tossée embeddings)
+- GitOps ArgoCD sur K3s (infra pure, pas urgent pour la niche)
+- Streaming Redpanda/Kafka (pas core MLOps frugal)
+- App mobile Flutter Virtual Try-On (off-topic positionnement)
+- Terraform pour homelab (infra pure, et tu as déjà Ansible qui couvre)
+- CI/CD Gitea Actions (devenu Forgejo Actions, déjà en place, juste retex éventuel à intégrer dans un autre article)
+- Sécurité homelab (utile mais marginal pour la niche)
+- dbt sur PostgreSQL (data eng standard, pas MLOps central)
+
+Si une opportunité ou une mission concrète ressuscite l'un de ces sujets dans le futur, c'est OK de le ressortir — mais ce n'est plus prioritaire dans la cadence d'articles 2026.

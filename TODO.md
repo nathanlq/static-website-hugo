@@ -1,122 +1,39 @@
-# TODO — Refonte site portfolio Nathan Leclercq
+# TODO — Blog Hugo
 
-## SITE — Actions immédiates (cette semaine)
+Ce TODO se limite à ce qui est spécifique au repo blog. Le **plan opérationnel d'articles** (cadence, sujets, promotion, canaux) vit dans `~/Documents/perso/TODO.md` — direction MLOps frugal et souverain.
 
-- [ ] **Photo de profil** — Trouver/prendre une photo sobre (pas besoin d'un studio, un portrait net suffit). La mettre dans `assets/` et configurer `params.author.image` dans `config/_default/languages.fr.toml`.
-- [ ] **Vérifier les liens DataKhi** — Remplacer les liens génériques (`https://www.datakhi.fr/fr/blog`) par les URLs directes de chaque article dans `content/posts/datakhi-blog.md` et `content/projets.md`.
-- [ ] **Relire les CV** — Vérifier que tout est factuel, qu'il n'y a pas d'erreur de date ou de chiffre.
-- [ ] **Tester le site mobile** — Vérifier le rendu sur téléphone (responsive).
-- [ ] **Déployer** — Mettre à jour le playbook Ansible si nécessaire, penser au `make build` (qui génère les PDFs avant le build Hugo).
+Le **catalogue d'idées d'articles** (filtré sur la niche actuelle) est dans `propositions-articles.md`.
 
 ---
 
-## IMAGES — Propositions par page/article
+## Actions immédiates sur le site
 
-### Page Projets (`content/projets.md`)
-- **Nyukom** : schéma d'architecture du pipeline (Sources → MinIO → PostgreSQL → Power BI). Tu peux le faire avec draw.io, Excalidraw, ou Mermaid.
-- **Hall U Need** : screenshot d'un dashboard de prédictions (si le client t'autorise), ou un graphique matplotlib prédictions vs réalité.
-- **Tossée** : screenshot de l'app mobile (virtual try-on), ou de l'extension navigateur, ou schéma de l'architecture multi-projets.
-- **Homelab** : photo de ton setup physique (serveurs, câbles, rack si tu en as), ou screenshot du dashboard Grafana.
-- **Book Reco** : screenshot de l'interface Vue.js ou du Swagger API.
+- [ ] **Photo de profil** — portrait net dans `assets/`, configurer `params.author.image` dans `config/_default/languages.fr.toml`.
+- [x] ~~CV à jour~~ — `cv_fr.md` + `cv_en.md` refondus (positionnement MLOps, talk DevLille, drive-knowledge-mcp + SIRENE + Benchmark Garage ajoutés, Tossée mis en avant pour l'écoconception). À relire pour vérifier les dates précises et l'exactitude factuelle.
+- [ ] **Migrer les CV vers Reactive Resume** — voir `~/Documents/perso/TODO.md` Bloc 1. Une fois Reactive Resume installé sur k3s, importer le contenu des markdown actuels, générer les PDFs depuis l'UI, updater les liens dans `content/about.md` et le menu Hugo, puis supprimer `cv_fr.md` / `cv_en.md` + la cible `make build` PDF.
+- [ ] **Liens DataKhi blog** — remplacer les liens génériques par les URLs directes de chaque article dans `content/projets.md` et autres.
+- [ ] **Mobile** — vérifier le rendu responsive avant prochain deploy.
+- [ ] **Lien Mastodon** — quand le compte sera créé (cf. TODO racine), l'ajouter dans `config/_default/languages.fr.toml` à côté de LinkedIn et GitHub.
+- [ ] **URL LinkedIn** — quand la vanity URL aura été changée (cf. TODO racine, section LinkedIn minimal), mettre à jour `content/about.md` et la config.
 
-### Articles de blog (thumbnails pour les cards)
-Les images sont à placer en tant que `featured.jpg` ou `featured.png` dans un dossier par article (Blowfish page bundles), ou directement référencées dans le frontmatter avec `image:`.
+## Couvertures d'articles
 
-- **Série Homelab** : schéma réseau, screenshot Proxmox, dashboard Grafana, photo du matériel
-- **Série Book Reco** : diagramme d'architecture, screenshot API Swagger, visualisation d'embeddings
-- **Cloud Nord 2024** : photo de la conférence ou logo de l'événement
-- **Harmonisation mélodies** : partition annotée ou visualisation musicale
-- **Hugo** : screenshot du site
+Voir `~/Documents/perso/TODO-blog-covers.md` pour le projet de générateur algorithmique de covers (typo/icône habitée par flow fields, paramétrée par embedding du post). C'est l'approche choisie au lieu de stock photo / IA bloated.
 
-Pour ajouter une thumbnail à un article, 2 méthodes :
-1. Frontmatter : `image: "thumbnail.jpg"` (image dans `static/` ou `assets/`)
-2. Page bundle : renommer `homelab0.md` en `homelab0/index.md` et mettre `featured.jpg` à côté
+En attendant que le générateur soit prêt : on peut ajouter des featured images simples (un schéma drawio, un screenshot Grafana, etc.) pour les articles publiés au cas par cas, mais ce n'est plus un chantier dédié — le générateur prendra le relais.
 
----
+## Build et deploy
 
-## ARTICLES — Échéancier hiérarchisé
+```bash
+hugo server          # dev local
+make build           # génère les PDFs CV puis hugo build
+# Deploy via Ansible playbook sur le serveur (cf. infra-homelab)
+```
 
-### Phase 1 — Fondations Data Engineering solides (mars - août 2026)
-*Combler les lacunes techniques les plus visibles. Impact CV immédiat.*
+Pré-requis fresh clone : `git submodule update --init --recursive` (theme hermit-v2).
 
-| Mois | Article | Effort | Lacune comblée |
-|------|---------|--------|----------------|
-| **Mars 2026** | Retour DataDays 2026 | 0 (rédaction) | — |
-| **Avril 2026** | Tests automatisés pour pipelines data (pytest, Great Expectations) | 1-2 WE | Tests |
-| **Mai 2026** | Observabilité pipeline (OpenTelemetry, alerting) | 1-2 WE | Observabilité |
-| **Juin 2026** | dbt sur PostgreSQL | 1-2 WE | dbt (standard DE) |
-| **Juil 2026** | Airflow sur K3s (retour d'XP) | 0 (rédaction) | — |
-| **Août 2026** | Data drift et monitoring de modèles ML (Evidently) | 2 WE | Monitoring ML |
+## Conventions à respecter
 
-**Logique :** Mars = article gratuit post-conférence, tu démarres sans pression. Ensuite les lacunes les plus faciles et visibles (tests, observabilité), puis dbt (standard DE). Airflow est un mois de rédaction pure = respiration. Le drift monitoring clôture la phase avec un signal MLOps.
-
-**Projet homelab :** Prendre Book Reco, ajouter pytest + Great Expectations, puis OpenTelemetry + alerting, puis dbt — tout sur le même PostgreSQL. Le drift monitoring se fait sur HUN.
-
-### Phase 2 — MLOps + expertise opérationnelle (sept 2026 - jan 2027)
-
-| Mois | Article | Effort |
-|------|---------|--------|
-| **Sept 2026** | Servir un modèle ML (BentoML/FastAPI/Seldon) | 2 WE |
-| **Oct 2026** | Scraping à grande échelle (retour d'XP) | 0 (rédaction) |
-| **Nov 2026** | Lakehouse MinIO + DuckDB | 1-2 WE |
-| **Déc 2026** | *Pause — vacances* | — |
-| **Jan 2027** | Terraform pour homelab | 2-3 WE |
-
-**Logique :** Model serving puis un mois de rédaction (scraping = vraie expertise différenciante). Lakehouse pour le signal "modern data stack". Décembre = pause réelle. Terraform ouvre la phase Platform Engineering.
-
-**Projet homelab :** Déployer BentoML/Seldon sur K3s. DuckDB sur MinIO. Terraformer l'infra existante.
-
-### Phase 3 — Platform Engineering (fév - mai 2027)
-
-| Mois | Article | Effort |
-|------|---------|--------|
-| **Fév 2027** | GitOps ArgoCD sur K3s | 1-2 WE |
-| **Mars 2027** | CI/CD Gitea Actions | 1-2 WE |
-| **Avr 2027** | Sécurité homelab (hardening, secrets, réseau) | 2 WE |
-
-**Logique :** Terraform + ArgoCD + CI/CD + Sécurité forment un bloc Platform Engineering cohérent. C'est le profil le plus monnayable en freelance data : quelqu'un qui sait construire ET opérer.
-
----
-
-## RYTHME
-
-**1 article par mois, avec une pause en décembre.** Les mois "rédaction seule" (retour d'XP, conférence) servent de respiration.
-
-**Workflow :**
-1. Semaines 1-2 : projet homelab (code, config, tests)
-2. Semaine 3 : rédaction + screenshots + schémas
-3. Semaine 4 : relecture, publication
-
-**Résultat à mai 2027 :** 15 articles actuels + 12 nouveaux = **27 articles publiés** + 5 articles DataKhi.
-
----
-
-## RÉSEAU — Préparation long terme freelance
-
-*Tu es en CDI. L'objectif n'est pas de vendre des services maintenant, mais de construire la visibilité et le réseau qui rendront la transition naturelle le moment venu.*
-
-- [ ] **Meetup PostgreSQL Lille** — Y aller régulièrement. Objectif : être un visage connu, pas juste un spectateur. Poser des questions, discuter après les talks.
-- [ ] **DataDays mars 2026** — Avec DataKhi. Écrire l'article de retour dans la foulée (cf. échéancier). Prendre des contacts.
-- [ ] **LinkedIn** — Poster 1-2x/mois : résumé d'un article publié, retour de meetup/conférence, apprentissage technique court. Pas besoin de devenir "influenceur", juste être visible.
-- [ ] **Contributions open source** — Si tu trouves un bug ou une amélioration sur un outil que tu utilises (Airflow, dbt, DuckDB...), ouvre une issue ou une PR. Même petite, ça compte.
-
-### Outils à explorer plus tard (pas urgent)
-- **Malt** : plateforme française de freelances tech. Tu crées un profil avec tes compétences, les clients te trouvent ou tu réponds à des missions. Forte présence data/dev. C'est le principal marketplace freelance en France.
-- **Comet** : similaire mais positionné plus haut de gamme (missions longues, grands comptes, TJM plus élevés). Sélectif à l'entrée. Pertinent quand tu auras 4-5 ans d'XP.
-
----
-
-## RÉSUMÉ — Impact sur le profil
-
-| Lacune actuelle | Article | Quand |
-|-----------------|---------|-------|
-| Tests automatisés | pytest, Great Expectations | Avril 2026 |
-| Observabilité | OpenTelemetry, alerting | Mai 2026 |
-| dbt / outils DE standard | dbt sur PostgreSQL | Juin 2026 |
-| Monitoring de modèles | Data drift, Evidently | Août 2026 |
-| Model serving | BentoML, Seldon | Sept 2026 |
-| Spark / lakehouse | DuckDB + MinIO | Nov 2026 |
-| Terraform | Terraform homelab | Jan 2027 |
-| GitOps | ArgoCD sur K3s | Fév 2027 |
-| CI/CD | Gitea Actions | Mars 2027 |
-| Sécurité infra | Hardening, secrets | Avr 2027 |
+- Frontmatter posts : `title`, `date`, `draft`, `tags`, `description` (cf. articles existants pour les valeurs typiques de tags).
+- Pas de doublon avec les 5 articles déjà publiés sur le blog DataKhi (liste dans `CLAUDE.md`).
+- Pages CV (`cv_fr.md`, `cv_en.md`) sans frontmatter Hugo.

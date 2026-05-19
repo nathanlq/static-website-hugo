@@ -10,7 +10,7 @@ Personal technical blog and portfolio for Nathan Leclercq, built with Hugo (stat
 - **Theme**: [hermit-v2](https://github.com/1bl4z3r/hermit-V2) (git submodule in `themes/hermit-v2`)
 - **Content**: Markdown
 - **Deployment**: Ansible playbook, Nginx Proxy Manager (HTTPS)
-- **Git remote**: `git.spacesheep.ovh` (self-hosted Gitea)
+- **Git remote**: `git.spacesheep.ovh` (self-hosted Forgejo, fork moderne de Gitea)
 
 ## Content Structure
 
@@ -60,8 +60,9 @@ git submodule update --init --recursive
 
 ## Current Goals
 
-- **Update CV**: Both `cv_fr.md` and `cv_en.md` are outdated (still say "étudiant en Master" and "alternance"). Need to reflect current CDI status at DataKhi (since 2025), including Nyukom and HUN projects.
-- **Add new posts**: New articles that complement (not duplicate) the 5 articles published on the DataKhi blog (`https://www.datakhi.fr/fr/blog`).
+- **Positionnement MLOps frugal et souverain**: ce blog est l'asset central de la stratégie "référent contenu MLOps frugal" en route vers freelance full remote 2029-2030. Voir `~/Documents/perso/TODO.md` pour le plan opérationnel détaillé (articles, promotion, horizon). Tous les nouveaux articles doivent renforcer cette niche, pas la diluer.
+- **Update CV**: Both `cv_fr.md` and `cv_en.md` are outdated (still say "étudiant en Master" and "alternance"). Need to reflect current CDI status at DataKhi (since 2025), positionnement MLOps explicite, talk DevLille 2026, projets Nyukom + HUN + knowledge-mcp.
+- **Add new posts**: New articles that complement (not duplicate) the 5 articles published on the DataKhi blog (`https://www.datakhi.fr/fr/blog`). Catalogue d'idées dans `propositions-articles.md` (filtré sur la niche), plan mensuel dans `~/Documents/perso/TODO.md`.
 - **Profile reference**: `tmp_profil.txt` contains a comprehensive profile analysis with project inventory, skills cartography, and career orientation - use it as source material for CV updates.
 
 ## DataKhi Blog Articles (by Nathan - DO NOT duplicate)
