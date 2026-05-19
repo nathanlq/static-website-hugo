@@ -39,7 +39,7 @@ showTableOfContents: true
 - Stack : Airflow 3, K3s, Ansible, Docker, PostgreSQL 17, MinIO, Garage, Playwright, Python
 
 **MLOps Engineer — Mission drive-knowledge-mcp** · CDI · mai 2026 - présent
-- Moteur de recherche sémantique sur un Drive d'entreprise SharePoint (~212 Go), exposé en serveur Model Context Protocol pour interrogation en langage naturel via Claude
+- Moteur de recherche sémantique sur un Drive d'entreprise SharePoint volumineux, exposé en serveur Model Context Protocol pour interrogation en langage naturel via Claude
 - Architecture hybride pgvector + tsvector + trigram + RRF, embeddings Nomic Embed Text servis localement via Ollama, ingestion incrémentale via Microsoft Graph delta
 - Angle souveraineté : aucun document envoyé à un LLM tiers, l'intelligence (embeddings + retrieval) reste chez le client
 - Stack : Python, pgvector, Microsoft Graph, MSAL, Nomic Embed Text, MCP SDK, Azure AD
@@ -52,7 +52,7 @@ showTableOfContents: true
 
 **Data + Platform Engineer — Benchmark S3 souverain (Garage vs MinIO)** · CDI · 2025 - 2026
 - Conception et exécution d'un benchmark Garage vs MinIO (cluster 3 nœuds + mono-nœud) pour le choix du stockage objet sur workloads sensibles
-- Mesures : lectures DuckDB sur parquets (~43 860 fichiers, ~5 Go), écritures boto3, test de résilience (coupure de nœud + recovery)
+- Mesures : lectures DuckDB sur dataset parquet multi-Go, écritures boto3, test de résilience (coupure de nœud + recovery)
 - Automatisation Ansible reproductible, sert de socle technique au talk DevLille 2026
 - Stack : Garage, MinIO, DuckDB, boto3, Ansible, Python
 

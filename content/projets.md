@@ -26,7 +26,7 @@ Articles liés sur le blog DataKhi :
 ### drive-knowledge-mcp — RAG sur Drive d'entreprise via MCP
 *MLOps Engineer · mai 2026 - présent*
 
-Moteur de recherche sémantique sur un SharePoint d'entreprise (~212 Go, plusieurs dizaines de milliers de fichiers), exposé en serveur Model Context Protocol pour être interrogé en langage naturel via Claude. Pattern jumeau du projet perso `knowledge-mcp`, mais source = SharePoint via Microsoft Graph (ingestion incrémentale via API delta) au lieu d'un walker filesystem. V0 = métadonnées + descriptors enrichis embedés via Nomic Embed Text (local), recherche hybride pgvector + tsvector + trigram + RRF. Permet d'interroger le Drive sans télécharger ni envoyer les fichiers à un LLM tiers — l'intelligence (embeddings) reste chez Datakhi.
+Moteur de recherche sémantique sur un SharePoint d'entreprise (plusieurs centaines de Go), exposé en serveur Model Context Protocol pour être interrogé en langage naturel via Claude. Pattern jumeau du projet perso `knowledge-mcp`, mais source = SharePoint via Microsoft Graph (ingestion incrémentale via API delta) au lieu d'un walker filesystem. V0 = métadonnées + descriptors enrichis embedés via Nomic Embed Text (local), recherche hybride pgvector + tsvector + trigram + RRF. Permet d'interroger le Drive sans télécharger ni envoyer les fichiers à un LLM tiers — l'intelligence (embeddings) reste chez Datakhi.
 
 `Python` `pgvector` `Microsoft Graph` `MSAL` `Nomic Embed Text` `MCP SDK` `Azure AD (Entra ID)`
 
@@ -44,7 +44,7 @@ Pipeline ETL alimentant une base PostgreSQL avec les données du répertoire SIR
 ### Benchmark S3 souverain — Garage vs MinIO
 *Data + Platform Engineer · 2025 - 2026*
 
-Benchmark comparatif Garage et MinIO (cluster 3 nœuds vs mono-nœud), pour décider du stockage objet à utiliser sur les workloads sensibles d'entreprise. Mesures : 10 lectures DuckDB sur parquets (~43 860 fichiers, ~5 Go) + 4 écritures boto3, plus un test de résilience (coupure d'un nœud, vérification de la recovery). Mode dry-run pour calibrer, automatisation Ansible pour reproduire sur n'importe quel cluster. Sert de socle au talk DevLille 2026.
+Benchmark comparatif Garage et MinIO (cluster 3 nœuds vs mono-nœud), pour décider du stockage objet à utiliser sur les workloads sensibles d'entreprise. Mesures : 10 lectures DuckDB sur un dataset parquet de plusieurs Go + 4 écritures boto3, plus un test de résilience (coupure d'un nœud, vérification de la recovery). Mode dry-run pour calibrer, automatisation Ansible pour reproduire sur n'importe quel cluster. Sert de socle au talk DevLille 2026.
 
 `Garage` `MinIO` `DuckDB` `boto3` `Ansible` `Python` `S3`
 
