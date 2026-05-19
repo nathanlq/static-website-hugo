@@ -10,7 +10,7 @@ title = "Nathan Leclercq"
 
 [params.author]
   name = "Nathan Leclercq"
-  image = ""
+  image = "nathan.jpeg"
   headline = "Data Engineer · ML Engineer"
   bio = "Je conçois et opère des plateformes data de bout en bout — de la collecte au modèle ML en production. CDI chez [DataKhi](https://datakhi.fr/), Tourcoing."
   links = [

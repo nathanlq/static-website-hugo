@@ -4,6 +4,7 @@ date: "2026-02-13"
 draft: false
 tags: ["datakhi", "data-engineering", "machine-learning", "open-source"]
 description: "Présentation des 5 articles techniques que j'ai écrits sur le blog de DataKhi en 2026."
+featureimage: "img/datakhi.jpg"
 ---
 
 Depuis début 2026, je publie des articles techniques sur le [blog de DataKhi](https://www.datakhi.fr/fr/blog), le cabinet de conseil data où je travaille en CDI depuis 2025. Ces articles sont issus de problèmes concrets rencontrés en mission — pas de la théorie, du retour d'expérience.

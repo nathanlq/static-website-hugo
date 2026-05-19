@@ -22,7 +22,7 @@ enableCodeCopy = true
 
 # Homepage
 [homepage]
-  layout = "hero"
+  layout = "profile"
   homepageImage = "spacesheep.jpg"
   showRecent = true
   showRecentItems = 6

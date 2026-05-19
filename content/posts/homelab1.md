@@ -4,6 +4,7 @@ date: 2024-12-29
 draft: false
 tags: ["proxmox", "homelab", "virtualisation", "hyperviseur"]
 description: "Installation de Proxmox, configuration réseau, cluster, NAS NFS et GPU PCI-Passthrough sur un homelab."
+featureimage: "img/homelab.jpg"
 ---
 
 Dans le cadre de mon projet homelab, qui vise à créer un environnement informatique personnel pour héberger divers services et expérimenter avec différentes technologies, la première étape consistait à installer et configurer Proxmox VE comme hyperviseur sur mes deux serveurs. Ce choix s'inscrit dans une architecture plus large comprenant un routeur, deux serveurs de virtualisation et un NAS Synology, permettant de centraliser et d'automatiser la gestion de mes services personnels.
