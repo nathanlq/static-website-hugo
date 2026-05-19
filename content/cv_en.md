@@ -1,6 +1,6 @@
 ---
 title: "Resume"
-description: "Nathan Leclercq — Data Engineer & ML Engineer"
+description: "Nathan Leclercq — MLOps & Data Engineer"
 showReadingTime: false
 showDate: false
 showAuthor: false
@@ -15,7 +15,15 @@ showTableOfContents: true
 
 ## Profile
 
-Data Engineer and ML Engineer at DataKhi for 3 years (apprenticeship then full-time). I design and operate end-to-end data platforms: collection, pipelines, ML models, deployment, monitoring. Background in mathematics and computer science, Master's in Machine Learning (Lille). I don't just write code — I deploy, industrialize and deliver.
+**MLOps & Data Engineer** at DataKhi for 3 years (apprenticeship then full-time). I design and operate end-to-end data + ML platforms: collection, pipelines, ML models, deployment, monitoring. Three recurring angles in my work: **targeted sovereignty** (taking back control of sensitive ML workloads without migrating everything off existing clouds), **infrastructure frugality** (measuring rather than guessing the energy cost of an ML cluster), **product eco-design** (environmental impact of ML systems, hands-on experience with Tossée + Ecobalyse). Master's in Machine Learning (Lille), background in mathematics.
+
+---
+
+## Talks & Publications
+
+- **DevLille 2026** (April 2026, with Jonathan Fritsch) — *"Take back control of your data platform from the American giants"*: hands-on talk on deploying a modern data platform in private cloud (MinIO/Garage, PostgreSQL, DuckDB, K3s)
+- **5 technical articles on the [DataKhi blog](https://www.datakhi.fr/fr/blog)** (Jan 2026): sovereign data platforms, self-hosted S3 storage, migration to open source, ML for demand forecasting, database architectures for recommendation systems
+- **Technical articles on [my personal blog](https://nathan.leclercq.spacesheep.ovh/posts/)** (2024-2026): Homelab series (5 posts), Book Reco series (6 posts), Cloud Nord 2024 review, melody harmonization research
 
 ---
 
@@ -23,30 +31,52 @@ Data Engineer and ML Engineer at DataKhi for 3 years (apprenticeship then full-t
 
 ### DataKhi — Data Consulting Firm, Tourcoing (2023 - present)
 
-**Data Engineer — Nyukom Project** · Full-time · Oct 2025 - present
-- Designed and deployed an end-to-end telecom data platform: collection (3CX web scraping, Centreon API), MinIO data lake, PostgreSQL star schema warehouse, Power BI reporting
-- Full infrastructure deployment: K3s, Airflow, Ansible, private Docker registry
-- Multi-tenant architecture with partitioning, idempotency and historical backfill
-- Stack: Airflow, K3s, Ansible, Docker, PostgreSQL, MinIO, Playwright, Pandas
+**MLOps & Data Engineer — Nyukom Project** · Full-time · Oct 2025 - present
+- End-to-end telecom data platform: collection (3CX web scraping, Centreon API), object data lake, PostgreSQL star schema warehouse, Power BI reporting
+- Full infrastructure deployed and operated: K3s, Airflow, Ansible (5 roles), private OCI registry
+- **Ongoing migration of object storage from MinIO to Garage** (European S3) for sensitive workloads, J-1 mirror maintained during transition
+- Multi-tenant with partitioning, idempotency, historical backfill
+- Stack: Airflow 3, K3s, Ansible, Docker, PostgreSQL 17, MinIO, Garage, Playwright, Python
 
-**ML Engineer — Hall U Need Project** · Full-time (continued from apprenticeship) · 2023 - present
-- Industrialized a restaurant demand forecasting model (XGBoost quantile regression)
-- Multi-restaurant prediction models, feature engineering (weather, calendar, reservations)
-- Custom loss function (Huber), confidence interval calibration, non-regression tests
-- Full pipeline: Microsoft Fabric collection → training → prediction · Makefile workflow
+**MLOps Engineer — drive-knowledge-mcp Project** · Full-time · May 2026 - present
+- Semantic search engine over a corporate SharePoint Drive (~212 GB), exposed as a Model Context Protocol server for natural-language querying via Claude
+- Hybrid architecture: pgvector + tsvector + trigram + RRF, Nomic Embed Text embeddings served locally via Ollama, incremental ingestion via Microsoft Graph delta
+- Sovereignty angle: no document sent to a third-party LLM, intelligence (embeddings + retrieval) stays on-premise
+- Stack: Python, pgvector, Microsoft Graph, MSAL, Nomic Embed Text, MCP SDK, Azure AD
 
-**Data Engineer & ML Engineer — Tossée Project** · Apprenticeship · 2023 - 2025
-- Architected a complete data ecosystem for an eco-friendly fashion aggregator
-- Multi-brand scraping (Playwright, Scrapy, custom YAML rules engine)
-- Normalization pipeline, environmental impact calculation (Ecobalyse API), product embeddings
-- Backend API (FastAPI, PostgreSQL/pgvector, semantic search, recommendation)
-- Flutter mobile app: virtual try-on (DM-VTON), barcode scanning, multi-provider OAuth, geolocation
-- React/TypeScript browser extension for real-time environmental impact display
-- AI agent (OpenAI Agents SDK) for automated data extraction from HTML
-- Hybrid on-premise / Azure deployment (Functions, Blob, DevOps)
+**Data Engineer — French Companies Reference ETL (SIRENE)** · Full-time · 2025 - present
+- PostgreSQL ingestion pipeline for ~14.8M active companies, ~23M establishments, enriched with BCE/INPI financial ratios (~6.3M rows) and calls to the official French Business Directory API
+- Incremental mode (UPSERT) or full mode (atomic swap preserving API enrichments), error-tolerant, idempotent
+- Data warehouse schema `d_entreprise`, `d_etablissement`, `d_finance`, `d_dirigeant`
+- Stack: Python, PyArrow, Parquet, INSEE bulk data, Business Directory API
+
+**Data + Platform Engineer — Sovereign S3 Benchmark (Garage vs MinIO)** · Full-time · 2025 - 2026
+- Designed and ran a Garage vs MinIO benchmark (3-node cluster + single-node) to inform object storage choice for sensitive workloads
+- Measurements: DuckDB reads on parquets (~43,860 files, ~5 GB), boto3 writes, resilience test (node failure + recovery verification)
+- Reproducible Ansible automation, serves as technical foundation for the DevLille 2026 talk
+- Stack: Garage, MinIO, DuckDB, boto3, Ansible, Python
+
+**Data Engineer — Hall U Need Data Infrastructure (Microsoft Fabric + Azure Data Factory)** · Full-time (continued from apprenticeship) · 2023 - present
+- Operating and evolving an existing hybrid data infrastructure for a mid-sized restaurant company: Microsoft Fabric (data warehouse + notebooks), Azure Data Factory (flow orchestration), custom Playwright scraping pipelines for non-Azure sources
+- Day-to-day run: handling production incidents, cloud cost monitoring, flow monitoring
+- Progressive enrichment driven by client requests: new sources (POS systems, reservations, weather, HR, events), new flows, cost and reliability optimizations, containerization of custom pipelines
+- Stack: Microsoft Fabric, Azure Data Factory, Azure SQL, Docker, Python, Playwright, Pandas
+
+**ML Engineer — Hall U Need Demand Forecasting** · Full-time (continued from apprenticeship) · 2023 - present
+- Industrialized a restaurant demand forecasting model (XGBoost quantile regression) on the database fed by the Fabric infra above: 28 independent models, advanced feature engineering (weather, calendar, public holidays, bridge days, events, J-X reservations)
+- Custom Huber loss function, confidence interval calibration, non-regression tests (Pearson ≥ 0.999)
+- Full pipeline: Microsoft Fabric collection → training → prediction, Makefile workflow
+
+**Data + MLOps Engineer — Tossée Project** · Apprenticeship · 2023 - 2025
+- Complete data ecosystem for an eco-responsible fashion aggregator (~15 sub-projects, publicly archived under AGPL v3)
+- **Environmental impact scoring** via Ecobalyse API, multi-brand (67 YAML brands), product embedding ML pipeline for semantic search
+- Large-scale crawling and scraping (Scrapy + Playwright + FlareSolverr + custom YAML rules engine)
+- FastAPI + PostgreSQL/pgvector backend, Flutter mobile app (virtual try-on DM-VTON, barcode scanning, multi-provider OAuth, geolocation), React/TypeScript browser extension
+- AI agent (OpenAI Agents SDK) for automatic data extraction from HTML
+- Hybrid on-premise / Azure deployment (Functions, Blob)
 
 **FullStack Developer — Internship** · 2023 · 4 months
-- PowerBI versioning system: C++ backend (report differentials), React frontend, Electron distribution
+- Power BI versioning system: C++ backend (report differentials), React frontend, Electron distribution
 
 ---
 
@@ -57,40 +87,57 @@ Data Engineer and ML Engineer at DataKhi for 3 years (apprenticeship then full-t
 
 ## Technical Skills
 
+**MLOps & ML Engineering**
+- End-to-end production ML pipelines: training → serving → monitoring → reindex
+- Local LLM serving (Ollama, shared GPU), embedding pipelines (Nomic Embed Text, sentence-transformers, CamemBERT)
+- Production RAG: pgvector + tsvector + trigram + RRF, Model Context Protocol (MCP SDK)
+- XGBoost (quantile regression), feature engineering, temporal cross-validation, custom loss functions, interval calibration
+- LLM observability: Tempo OTLP, custom Prometheus metrics, Grafana alerting
+
 **Data Engineering**
 - End-to-end ETL pipelines, star schema, partitioning, idempotency, backfill
-- Apache Airflow · PostgreSQL · MinIO (S3) · Parquet / PyArrow · Microsoft Fabric
+- Apache Airflow (DAGs, custom operators), Kestra (evaluating), Microsoft Fabric, Azure Data Factory
+- Advanced PostgreSQL, PyArrow / Parquet, MinIO / Garage (S3-compat object storage), DuckDB
+- Hybrid data infrastructure maintenance (run, cloud cost monitoring, incidents, schema evolution)
 
-**Machine Learning**
-- XGBoost (quantile regression) · Feature engineering · Temporal cross-validation
-- Embeddings / vector search (pgvector) · CamemBERT / Transformers · MLflow
-- Confidence interval calibration · Custom loss functions
-
-**DevOps / Infrastructure**
-- Kubernetes (K3s) · Docker · Ansible (IaC, roles, vault) · Proxmox
-- Monitoring: Prometheus / Grafana · CI/CD: Makefile, pipelines
+**Infrastructure / DevOps / Frugality**
+- Kubernetes (K3s in production), Docker, Ansible (IaC, roles, vault, sealed-secrets)
+- Proxmox (4-node home cluster), GPU sharing (nvidia-device-plugin time-slicing)
+- Full observability stack: Prometheus, Grafana, Loki, Tempo
+- Energy measurement: Kepler (eBPF + RAPL for per-pod consumption), smart plugs / Home Assistant
+- CI/CD: Forgejo Actions, self-hosted Renovate, private OCI registry
 - Azure (Fabric, Functions, Blob, DevOps)
 
+**Web Scraping & Crawling**
+- Playwright (headless), Scrapy, BeautifulSoup, FlareSolverr (anti-bot)
+- Custom YAML rules engines (homegrown DSL)
+
 **Development**
-- Python (FastAPI, Pandas, scikit-learn) · SQL · TypeScript (React) · Dart (Flutter)
-- Scraping: Playwright, Scrapy, BeautifulSoup
-- Familiar with: Go, Rust, Haskell, C++
+- Python (FastAPI, Pandas, scikit-learn, PyTorch), SQL, TypeScript (React), Dart (Flutter)
+- Familiar with: Go, Rust, Haskell, C++, GraphQL
 
 **Scientific / Competitive Programming**
-- Julia (competitions: Google Hash Code, Reply Challenge, Cloudflight) · R · NumPy / SciPy
+- Julia (competitions: Google Hash Code, Reply Challenge, Cloudflight)
+- R, NumPy / SciPy, Polars
 
 ---
 
 ## Personal Projects
 
 **MLOps Homelab Platform** · 2024 - present
-- Self-hosted infrastructure: Proxmox, GPU servers, ML services, crewAI agents with RAG
-- Prometheus/Grafana monitoring, Ansible deployment, Docker registry, Gitea
+- Proxmox + K3s cluster (4 nodes including a RTX 4060 Ti GPU) fully operated via Ansible
+- Services in production: Ollama (qwen3:14b), Forgejo + Actions, Vaultwarden, Miniflux, Renovate, knowledge-mcp, Prom/Grafana/Loki/Tempo monitoring
+- Power management: WoL + automated nightly shutdown, on-demand scale-to-zero, GPU KEEP_ALIVE
 - [Published technical articles](https://nathan.leclercq.spacesheep.ovh/posts/)
 
+**knowledge-mcp — Personal RAG exposed via MCP** · 2026 - present
+- Personal semantic RAG engine over ~35k chunks of documents (markdown, code, articles), exposed as a Model Context Protocol server for Claude / Cursor
+- Same architecture as drive-knowledge-mcp (DataKhi side): pgvector + tsvector + trigram + RRF, Nomic Embed via Ollama
+- Deployed in production on the homelab: HTTP Deployment (CPU, ~50ms per query), GPU reindex CronJob
+- Stack: Python, pgvector, Nomic Embed, Ollama, MCP SDK, K3s, Forgejo Actions
+
 **Book Recommendation System** · 2023 - 2025
-- Full data pipeline: large book catalogue scraping, embeddings (TF-IDF + CamemBERT), FastAPI API
-- PostgreSQL/pgvector, MLflow, Vue.js interface
+- Full data pipeline: large book catalogue scraping, embeddings (TF-IDF + CamemBERT), FastAPI API, PostgreSQL/pgvector, MLflow, Vue.js interface
 - [Published technical articles](https://nathan.leclercq.spacesheep.ovh/posts/)
 
 **Algorithms Club** · 2020 - 2024
@@ -126,12 +173,5 @@ Data Engineer and ML Engineer at DataKhi for 3 years (apprenticeship then full-t
 
 - Music: jazz/soul saxophone, orchestra
 - Sports: daily cycling, badminton
-- Reading: science fiction, technical essays
+- Reading: science fiction, technical essays (digital sobriety, AI Act, systems design)
 - Tabletop role-playing games
-
----
-
-## Publications
-
-- [Technical articles on the DataKhi blog](https://www.datakhi.fr/fr/blog) (2026)
-- [Technical articles on my personal blog](https://nathan.leclercq.spacesheep.ovh/posts/) (2024-2025)
