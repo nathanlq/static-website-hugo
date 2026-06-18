@@ -9,7 +9,7 @@ showTableOfContents: true
 
 # Nathan Leclercq
 
-[nathan.leclercq9@protonmail.com](mailto:nathan.leclercq9@protonmail.com) | [LinkedIn](https://www.linkedin.com/in/nathan-leclercq-51292014b/) | [GitHub](https://github.com/nathanlq) | [Blog](https://nathan.leclercq.spacesheep.ovh/) | [Télécharger en PDF](/pdf/cv_nathan_leclercq_fr.pdf)
+[nathan.leclercq9@protonmail.com](mailto:nathan.leclercq9@protonmail.com) | [LinkedIn](https://www.linkedin.com/in/nathan-leclercq/) | [GitHub](https://github.com/nathanlq) | [Blog](https://nathan.leclercq.spacesheep.ovh/) | [Télécharger en PDF](/pdf/cv_nathan_leclercq_fr.pdf)
 
 ---
 
@@ -21,8 +21,8 @@ showTableOfContents: true
 
 ## Talks & Publications
 
-- **DevLille 2026** (avril 2026, avec Jonathan Fritsch) — *"Reprenez le contrôle de votre plateforme data face aux géants américains"* : retour d'expérience sur le déploiement d'une plateforme data moderne en cloud privé (MinIO/Garage, PostgreSQL, DuckDB, K3s)
-- **5 articles techniques publiés sur le [blog DataKhi](https://www.datakhi.fr/fr/blog)** (jan 2026) : plateforme data souveraine, stockage S3 self-hosted, migration vers open source, ML pour la prévision de demande, architectures de bases de données pour systèmes de recommandation
+- **DevLille 2026** (juin 2026, avec Jonathan Fritsch) — *"Reprenez le contrôle de votre plateforme data face aux géants américains"* : retour d'expérience sur le déploiement d'une plateforme data moderne en cloud privé (MinIO/Garage, PostgreSQL, DuckDB, K3s)
+- **8 articles techniques publiés sur le [blog DataKhi](https://www.datakhi.fr/fr/blog)** (jan 2026), notamment : plateforme data souveraine, stockage S3 self-hosted, migration vers open source, migration Airflow → Kestra, ML pour la prévision de demande, architectures de bases de données pour systèmes de recommandation
 - **Articles techniques sur [mon blog perso](https://nathan.leclercq.spacesheep.ovh/posts/)** (2024-2026) : série Homelab (5 posts), série Book Reco (6 posts), retour Cloud Nord 2024, recherche harmonisation de mélodies
 
 ---
@@ -38,42 +38,37 @@ showTableOfContents: true
 - Multi-client avec partitionnement, idempotence, backfill historique
 - Stack : Airflow 3, K3s, Ansible, Docker, PostgreSQL 17, MinIO, Garage, Playwright, Python
 
-**MLOps Engineer — Mission drive-knowledge-mcp** · CDI · mai 2026 - présent
-- Moteur de recherche sémantique sur un Drive d'entreprise SharePoint volumineux, exposé en serveur Model Context Protocol pour interrogation en langage naturel via Claude
-- Architecture hybride pgvector + tsvector + trigram + RRF, embeddings Nomic Embed Text servis localement via Ollama, ingestion incrémentale via Microsoft Graph delta
-- Angle souveraineté : aucun document envoyé à un LLM tiers, l'intelligence (embeddings + retrieval) reste chez le client
-- Stack : Python, pgvector, Microsoft Graph, MSAL, Nomic Embed Text, MCP SDK, Azure AD
-
-**Data Engineer — Pipeline ETL référentiel d'entreprises (SIRENE)** · CDI · 2025 - présent
+**Data Engineer — Référentiel d'entreprises & moteur de prospection B2B (SIRENE)** · CDI · 2025 - présent
 - Pipeline d'alimentation PostgreSQL avec ~14,8M entreprises actives, ~23M établissements, enrichi des ratios financiers BCE/INPI (~6,3M lignes) et d'appels à l'API Annuaire des Entreprises
-- Mode incrémental (UPSERT) ou full (swap atomique préservant les enrichissements API), tolérance aux erreurs, idempotence
+- Mode incrémental (UPSERT) ou full (swap atomique préservant les enrichissements API), tolérance aux erreurs, idempotence, déployé en CronJob Kubernetes
 - Schéma data warehouse `d_entreprise`, `d_etablissement`, `d_finance`, `d_dirigeant`
+- **Moteur de prospection B2B** par-dessus le référentiel : ciblage des cibles (API Recherche d'entreprises), résolution des sites web, recherche de contacts vérifiés (Dropcontact/Findymail), rédaction d'emails personnalisés par LLM (Mistral) et envoi automatisé
 - Stack : Python, PyArrow, Parquet, Bulk INSEE, API Annuaire Entreprises
 
 **Data + Platform Engineer — Benchmark S3 souverain (Garage vs MinIO)** · CDI · 2025 - 2026
 - Conception et exécution d'un benchmark Garage vs MinIO (cluster 3 nœuds + mono-nœud) pour le choix du stockage objet sur workloads sensibles
 - Mesures : lectures DuckDB sur dataset parquet multi-Go, écritures boto3, test de résilience (coupure de nœud + recovery)
-- Automatisation Ansible reproductible, sert de socle technique au talk DevLille 2026
-- Stack : Garage, MinIO, DuckDB, boto3, Ansible, Python
+- Banc d'essai reproductible et automatisé (Docker Compose multi-nœuds + scripts de déploiement), socle technique du talk DevLille 2026
+- Stack : Garage, MinIO, DuckDB, boto3, Docker Compose, Python
 
 **Data Engineer — Infra data Hall U Need (Microsoft Fabric + Azure Data Factory)** · CDI (continuité alternance) · 2023 - présent
 - Opération et évolution d'une infrastructure data hybride existante pour une moyenne entreprise du secteur de la restauration : Microsoft Fabric (data warehouse + notebooks), Azure Data Factory (orchestration de flux), pipelines de scraping custom Playwright pour les sources non-Azure
 - Run quotidien : gestion des incidents en production, suivi des coûts cloud, monitoring des flux
-- Enrichissement progressif au fil des demandes client : ajout de nouvelles sources (caisses, réservations, météo, RH, événementiel), nouveaux flux, optimisations coût et fiabilité, conteneurisation des pipelines custom
-- Stack : Microsoft Fabric, Azure Data Factory, Azure SQL, Docker, Python, Playwright, Pandas
+- Enrichissement progressif au fil des demandes client : ajout de nouvelles sources (caisses, réservations, météo, RH, événementiel), nouveaux flux, optimisations coût et fiabilité
+- Stack : Microsoft Fabric, Azure Data Factory, Azure SQL, Python, Playwright, Pandas
 
 **ML Engineer — Prédiction d'affluence Hall U Need** · CDI (continuité alternance) · 2023 - présent
 - Industrialisation d'un modèle de prédiction d'affluence restaurant (XGBoost quantile regression) sur la base de données alimentée par l'infra Fabric ci-dessus : 28 modèles indépendants, feature engineering avancé (météo, calendrier, jours fériés, ponts, événements, réservations J-X)
 - Loss function custom Huber, calibration des intervalles de confiance, tests de non-régression (Pearson ≥ 0,999)
 - Pipeline complet collecte Microsoft Fabric → entraînement → prédiction, workflow Makefile
 
-**Data + MLOps Engineer — Mission Tossée** · Alternance · 2023 - 2025
-- Écosystème data complet pour un agrégateur de mode éco-responsable (~15 sous-projets, archivé AGPL v3 publiquement)
+**Data & Full-Stack Engineer — Mission Tossée** · Alternance · 2023 - 2025
+- Produit data-driven complet pour un agrégateur de mode éco-responsable (~15 sous-projets, archivé AGPL v3 publiquement) : développé **du front au back**, de la collecte de données jusqu'aux interfaces utilisateur
 - **Scoring d'impact environnemental** via API Ecobalyse, multi-marques (67 brands YAML), pipeline ML d'embedding produit pour la recherche sémantique
 - Crawling et scraping à grande échelle (Scrapy + Playwright + FlareSolverr + moteur de règles YAML maison)
-- Backend FastAPI + PostgreSQL/pgvector, app mobile Flutter (essayage virtuel DM-VTON, scan code-barres, OAuth multi-provider, géolocalisation), extension navigateur React/TypeScript
+- **Full-stack** : backend FastAPI + PostgreSQL/pgvector, app mobile Flutter (essayage virtuel DM-VTON, scan code-barres, OAuth multi-provider, géolocalisation), extension navigateur React/TypeScript
 - Agent IA (OpenAI Agents SDK) pour extraction automatique de données depuis HTML
-- Déploiement hybride on-premise / Azure (Functions, Blob)
+- Déploiement hybride on-premise (Kubernetes) / Azure (AKS, Functions, Blob), automatisé en IaC (Ansible, Terraform)
 
 **Développeur FullStack — Stage** · 2023 · 4 mois
 - Système de versioning pour Power BI : backend C++ (différentiels de rapports), frontend React, distribution Electron
@@ -101,7 +96,7 @@ showTableOfContents: true
 - Maintenance d'infra data hybride (run, coûts cloud, incidents, évolutions schéma)
 
 **Infrastructure / DevOps / Frugalité**
-- Kubernetes (K3s en production), Docker, Ansible (IaC, rôles, vault, sealed-secrets)
+- Kubernetes (K3s en production), Docker, Ansible & Terraform (IaC, rôles, vault, sealed-secrets)
 - Proxmox (cluster maison 4 nœuds), GPU sharing (nvidia-device-plugin time-slicing)
 - Monitoring stack complète : Prometheus, Grafana, Loki, Tempo
 - Mesure de conso : Kepler (eBPF + RAPL pour conso par pod), smart plugs / Home Assistant
@@ -132,7 +127,7 @@ showTableOfContents: true
 
 **knowledge-mcp — RAG personnel exposé en MCP** · 2026 - présent
 - Moteur de RAG sémantique perso sur ~35k chunks de documents (markdown, code, articles), exposé en serveur Model Context Protocol pour Claude / Cursor
-- Architecture identique à drive-knowledge-mcp (côté Datakhi) : pgvector + tsvector + trigram + RRF, Nomic Embed via Ollama
+- Architecture pgvector + tsvector + trigram + RRF, Nomic Embed via Ollama
 - Déployé en production sur le homelab : Deployment HTTP (CPU, ~50ms par requête), CronJob de reindex GPU
 - Stack : Python, pgvector, Nomic Embed, Ollama, MCP SDK, K3s, Forgejo Actions
 

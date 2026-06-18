@@ -9,7 +9,7 @@ showTableOfContents: true
 
 # Nathan Leclercq
 
-[nathan.leclercq9@protonmail.com](mailto:nathan.leclercq9@protonmail.com) | [LinkedIn](https://www.linkedin.com/in/nathan-leclercq-51292014b/) | [GitHub](https://github.com/nathanlq) | [Blog](https://nathan.leclercq.spacesheep.ovh/) | [Download PDF](/pdf/cv_nathan_leclercq_en.pdf)
+[nathan.leclercq9@protonmail.com](mailto:nathan.leclercq9@protonmail.com) | [LinkedIn](https://www.linkedin.com/in/nathan-leclercq/) | [GitHub](https://github.com/nathanlq) | [Blog](https://nathan.leclercq.spacesheep.ovh/) | [Download PDF](/pdf/cv_nathan_leclercq_en.pdf)
 
 ---
 
@@ -21,8 +21,8 @@ showTableOfContents: true
 
 ## Talks & Publications
 
-- **DevLille 2026** (April 2026, with Jonathan Fritsch) — *"Take back control of your data platform from the American giants"*: hands-on talk on deploying a modern data platform in private cloud (MinIO/Garage, PostgreSQL, DuckDB, K3s)
-- **5 technical articles on the [DataKhi blog](https://www.datakhi.fr/fr/blog)** (Jan 2026): sovereign data platforms, self-hosted S3 storage, migration to open source, ML for demand forecasting, database architectures for recommendation systems
+- **DevLille 2026** (June 2026, with Jonathan Fritsch) — *"Take back control of your data platform from the American giants"*: hands-on talk on deploying a modern data platform in private cloud (MinIO/Garage, PostgreSQL, DuckDB, K3s)
+- **8 technical articles on the [DataKhi blog](https://www.datakhi.fr/fr/blog)** (Jan 2026), including: sovereign data platforms, self-hosted S3 storage, migration to open source, Airflow → Kestra migration, ML for demand forecasting, database architectures for recommendation systems
 - **Technical articles on [my personal blog](https://nathan.leclercq.spacesheep.ovh/posts/)** (2024-2026): Homelab series (5 posts), Book Reco series (6 posts), Cloud Nord 2024 review, melody harmonization research
 
 ---
@@ -38,12 +38,6 @@ showTableOfContents: true
 - Multi-tenant with partitioning, idempotency, historical backfill
 - Stack: Airflow 3, K3s, Ansible, Docker, PostgreSQL 17, MinIO, Garage, Playwright, Python
 
-**MLOps Engineer — drive-knowledge-mcp Project** · Full-time · May 2026 - present
-- Semantic search engine over a large corporate SharePoint Drive, exposed as a Model Context Protocol server for natural-language querying via Claude
-- Hybrid architecture: pgvector + tsvector + trigram + RRF, Nomic Embed Text embeddings served locally via Ollama, incremental ingestion via Microsoft Graph delta
-- Sovereignty angle: no document sent to a third-party LLM, intelligence (embeddings + retrieval) stays on-premise
-- Stack: Python, pgvector, Microsoft Graph, MSAL, Nomic Embed Text, MCP SDK, Azure AD
-
 **Data Engineer — French Companies Reference ETL (SIRENE)** · Full-time · 2025 - present
 - PostgreSQL ingestion pipeline for ~14.8M active companies, ~23M establishments, enriched with BCE/INPI financial ratios (~6.3M rows) and calls to the official French Business Directory API
 - Incremental mode (UPSERT) or full mode (atomic swap preserving API enrichments), error-tolerant, idempotent
@@ -53,14 +47,14 @@ showTableOfContents: true
 **Data + Platform Engineer — Sovereign S3 Benchmark (Garage vs MinIO)** · Full-time · 2025 - 2026
 - Designed and ran a Garage vs MinIO benchmark (3-node cluster + single-node) to inform object storage choice for sensitive workloads
 - Measurements: DuckDB reads on a multi-GB parquet dataset, boto3 writes, resilience test (node failure + recovery verification)
-- Reproducible Ansible automation, serves as technical foundation for the DevLille 2026 talk
-- Stack: Garage, MinIO, DuckDB, boto3, Ansible, Python
+- Reproducible automated test bench (multi-node Docker Compose + deployment scripts), technical foundation for the DevLille 2026 talk
+- Stack: Garage, MinIO, DuckDB, boto3, Docker Compose, Python
 
 **Data Engineer — Hall U Need Data Infrastructure (Microsoft Fabric + Azure Data Factory)** · Full-time (continued from apprenticeship) · 2023 - present
 - Operating and evolving an existing hybrid data infrastructure for a mid-sized restaurant company: Microsoft Fabric (data warehouse + notebooks), Azure Data Factory (flow orchestration), custom Playwright scraping pipelines for non-Azure sources
 - Day-to-day run: handling production incidents, cloud cost monitoring, flow monitoring
-- Progressive enrichment driven by client requests: new sources (POS systems, reservations, weather, HR, events), new flows, cost and reliability optimizations, containerization of custom pipelines
-- Stack: Microsoft Fabric, Azure Data Factory, Azure SQL, Docker, Python, Playwright, Pandas
+- Progressive enrichment driven by client requests: new sources (POS systems, reservations, weather, HR, events), new flows, cost and reliability optimizations
+- Stack: Microsoft Fabric, Azure Data Factory, Azure SQL, Python, Playwright, Pandas
 
 **ML Engineer — Hall U Need Demand Forecasting** · Full-time (continued from apprenticeship) · 2023 - present
 - Industrialized a restaurant demand forecasting model (XGBoost quantile regression) on the database fed by the Fabric infra above: 28 independent models, advanced feature engineering (weather, calendar, public holidays, bridge days, events, J-X reservations)
@@ -132,7 +126,7 @@ showTableOfContents: true
 
 **knowledge-mcp — Personal RAG exposed via MCP** · 2026 - present
 - Personal semantic RAG engine over ~35k chunks of documents (markdown, code, articles), exposed as a Model Context Protocol server for Claude / Cursor
-- Same architecture as drive-knowledge-mcp (DataKhi side): pgvector + tsvector + trigram + RRF, Nomic Embed via Ollama
+- Architecture: pgvector + tsvector + trigram + RRF, Nomic Embed via Ollama
 - Deployed in production on the homelab: HTTP Deployment (CPU, ~50ms per query), GPU reindex CronJob
 - Stack: Python, pgvector, Nomic Embed, Ollama, MCP SDK, K3s, Forgejo Actions
 

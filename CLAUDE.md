@@ -2,73 +2,90 @@
 
 ## Project Overview
 
-Personal technical blog and portfolio for Nathan Leclercq, built with Hugo (static site generator). Hosted at `https://nathan.leclercq.spacesheep.ovh/`, deployed via Ansible to a self-hosted server behind Nginx Proxy Manager.
+Blog technique et portfolio de Nathan Leclercq, en Hugo. En ligne sur
+`https://nathan.leclercq.spacesheep.ovh/`.
+
+## Hébergement & déploiement
+
+- **Hébergé sur le NAS Synology** (`192.168.1.165:443`), exposé via Nginx Proxy
+  Manager. Voir `~/Documents/perso/infra-homelab/docs/inventaire-actuel.md`
+  (ligne « ne pas toucher »). Le site n'est PAS sur le cluster k3s et n'est PAS
+  géré par l'Ansible de `infra-homelab`.
+- **Build** : `hugo` → sortie dans `public/`.
+- **Publication vers le NAS** : non scriptée dans ce repo (pas de CI Forgejo,
+  pas de rôle Ansible trouvé). Étape faite à la main par Nathan — TODO : documenter
+  la commande exacte ici une fois confirmée.
 
 ## Tech Stack
 
 - **Hugo** (static site generator)
-- **Theme**: [hermit-v2](https://github.com/1bl4z3r/hermit-V2) (git submodule in `themes/hermit-v2`)
-- **Content**: Markdown
-- **Deployment**: Ansible playbook, Nginx Proxy Manager (HTTPS)
-- **Git remote**: `git.spacesheep.ovh` (self-hosted Forgejo, fork moderne de Gitea)
+- **Thème** : **Blowfish** (`theme = "blowfish"` dans `config/_default/config.toml`,
+  docs : https://blowfish.page). `themes/hermit-v2` existe encore mais n'est PAS utilisé.
+- **Contenu** : Markdown
+- **Git remotes** : `forgejo` (`git.spacesheep.ovh`, self-hosted) + `origin`
+  (`codeberg.org`). Branche `master`.
+
+## Configuration (éclatée dans `config/_default/`)
+
+- `config.toml` : baseURL, `languageCode = "fr"`, `theme = "blowfish"`, taxonomies,
+  outputs (home : HTML/RSS/JSON)
+- `params.toml` : params Blowfish — homepage `layout = "profile"`,
+  `homepageImage = "spacesheep.jpg"` (image de la page d'accueil), article/list/footer
+- `menus.fr.toml` : menu = Projets, Blog, À propos, CV (FR), CV (EN)
+- `languages.fr.toml`, `markup.toml`
 
 ## Content Structure
 
 ```
 content/
-  about.md          # Page "À propos" - portfolio description
-  cv_fr.md          # CV français (Markdown, no frontmatter)
-  cv_en.md          # CV anglais (Markdown, no frontmatter)
-  posts/
-    homelab0-4.md   # Série Homelab (5 articles) - Proxmox, monitoring, stockage, services, automatisation
-    bookrecopart0-5.md  # Série Book Reco (6 articles) - scraping, transformation, embeddings, API, déploiement
-    cloudnord2024.md    # Retour Cloud Nord 2024
-    hugo.md             # Tutoriel Hugo
-    melodyharmony.md    # Recherche harmonisation de mélodies
+  _index.md         # Page d'accueil (titre + description)
+  about.md          # "À propos"
+  cv_fr.md          # CV français (AVEC frontmatter Blowfish)
+  cv_en.md          # CV anglais (AVEC frontmatter)
+  projets.md        # Page projets
+  posts/            # Articles : séries Homelab + Book Reco, Cloud Nord 2024, etc.
 ```
 
-## Configuration
+Assets images : `assets/` (traités par Hugo, ex. `homepageImage`) et `static/img/`
+(servis tels quels, référencés en `/img/...`).
 
-- `config.toml`: Hugo configuration
-  - `baseURL`: `https://nathan.leclercq.spacesheep.ovh/`
-  - `languageCode`: `fr-fr`
-  - `theme`: `hermit-v2`
-  - Features: code highlighting, read time (in French), related posts, copy button, scroll to top
-  - Social links: LinkedIn, GitHub
-  - Menu: Posts, À propos, Curriculum Vitae (FR), Resume (EN)
+## CV PDF téléchargeables — /!\ GOTCHA
 
-## Development
+Servis à `/pdf/cv_nathan_leclercq_{fr,en}.pdf` (dans `static/pdf/`).
 
-```bash
-# Local development
-hugo server
-
-# Build
-hugo
-
-# Theme is a git submodule - initialize on fresh clone
-git submodule update --init --recursive
-```
+Le `Makefile` (`make cv-pdf` / `make build`) REGÉNÈRE ces PDF depuis `pdf/cv_fr.md`
+via pandoc. MAIS le PDF FR servi a été remplacé par la version soignée (awesome-cv,
+LaTeX) maintenue dans `~/Documents/candidatures/` (`cv_fr.tex` → `cv_fr.pdf`).
+=> Ne PAS lancer `make cv-pdf`/`make build` sans le vouloir : ça écraserait le beau
+CV avec l'ancienne version pandoc. Pour mettre à jour le CV servi : recompiler dans
+`~/Documents/candidatures/` puis copier le PDF dans `static/pdf/`.
 
 ## Important Notes
 
-- **CV pages** (`cv_fr.md`, `cv_en.md`) have **no Hugo frontmatter** - they are plain Markdown rendered as standalone pages
-- **Posts** use frontmatter with `title`, `date`, `draft`, `tags`, `description` fields
-- The `.gitignore` excludes `/public/` (build output) and `/resources/_gen/`
-- Static assets (favicon, screenshots for blog posts) are in `static/`
-- Custom layout override: `layouts/partials/head.html`
+- Les pages CV (`cv_fr.md`, `cv_en.md`) ONT un frontmatter (title, description,
+  showReadingTime, showTableOfContents…).
+- `.gitignore` exclut `/public/` et `/resources/_gen/`.
+- Override de layout : `layouts/partials/`.
 
 ## Current Goals
 
-- **Positionnement MLOps frugal et souverain**: ce blog est l'asset central de la stratégie "référent contenu MLOps frugal" en route vers freelance full remote 2029-2030. Voir `~/Documents/perso/TODO.md` pour le plan opérationnel détaillé (articles, promotion, horizon). Tous les nouveaux articles doivent renforcer cette niche, pas la diluer.
-- **Update CV**: Both `cv_fr.md` and `cv_en.md` are outdated (still say "étudiant en Master" and "alternance"). Need to reflect current CDI status at DataKhi (since 2025), positionnement MLOps explicite, talk DevLille 2026, projets Nyukom + HUN + knowledge-mcp.
-- **Add new posts**: New articles that complement (not duplicate) the 5 articles published on the DataKhi blog (`https://www.datakhi.fr/fr/blog`). Catalogue d'idées dans `propositions-articles.md` (filtré sur la niche), plan mensuel dans `~/Documents/perso/TODO.md`.
-- **Profile reference**: `tmp_profil.txt` contains a comprehensive profile analysis with project inventory, skills cartography, and career orientation - use it as source material for CV updates.
+- **Positionnement MLOps frugal et souverain** : ce blog est l'asset central de la
+  stratégie « référent contenu MLOps frugal » vers freelance full remote 2029-2030.
+  Voir `~/Documents/perso/TODO.md`. Tout nouvel article doit renforcer la niche.
+- **CV à jour** (fait, juin 2026) : statut CDI DataKhi, positionnement Data/MLOps,
+  talk DevLille 2026, projets Nyukom/HUN/SIRENE. Ne plus dire « étudiant en Master ».
+  Mission client `drive-knowledge-mcp` retirée des CV publics (confidentialité).
+- **Article DevLille** (à venir) : la photo de scène est parquée dans
+  `static/img/devlille-2026.jpg` (et `assets/devlille-2026.jpg`), prête à insérer.
+- **Nouveaux posts** : compléter, sans dupliquer, les 8 articles du blog DataKhi.
 
-## DataKhi Blog Articles (by Nathan - DO NOT duplicate)
+## DataKhi Blog Articles (par Nathan — NE PAS dupliquer)
 
-1. "Construire une plateforme de données souveraine" (jan 2026) - Architecture MinIO/PostgreSQL/Airflow/K3s
-2. "Stockage de fichiers auto-hébergé : stockage objet et alternatives" (jan 2026) - S3, Garage, MinIO
-3. "Passer à l'open source : comment ça se passe concrètement" (jan 2026) - Migration infra open source
-4. "Anticiper l'affluence grâce au machine learning" (jan 2026) - XGBoost, prévision de demande
-5. "Systèmes de recommandation : quelle architecture de BDD choisir" (jan 2026) - Graph DB vs Vector DB
+8 articles au total (jan 2026 et après). Connus :
+1. Construire une plateforme de données souveraine — MinIO/PostgreSQL/Airflow/K3s
+2. Stockage de fichiers auto-hébergé : stockage objet et alternatives — S3, Garage, MinIO
+3. Passer à l'open source : comment ça se passe concrètement — migration infra
+4. Anticiper l'affluence grâce au machine learning — XGBoost, prévision de demande
+5. Systèmes de recommandation : quelle architecture de BDD choisir — Graph vs Vector DB
+6. Migration Airflow → Kestra
+(+ 2 autres — à compléter en relisant https://www.datakhi.fr/fr/blog)
